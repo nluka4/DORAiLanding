@@ -437,11 +437,11 @@ html.is-snap.can-anim .snap.is-in { opacity: 1; transform: none; }
 .dl__facts li { display: flex; gap: 10px; align-items: baseline; }
 .dl__facts li::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex: none; translate: 0 -2px; }
 .picker { background: color-mix(in srgb, var(--surface) 86%, transparent); border: 1px solid var(--line); border-radius: 10px; padding: 8px; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: var(--shadow); }
-.picker fieldset { border: 0; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; }
+.picker fieldset { border: 0; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; }
 .picker legend { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
 .opt { position: relative; }
 .opt input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
-.opt label { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; padding: 14px 14px 13px; border-radius: 7px; border: 1px solid transparent; cursor: pointer; transition: background .2s, border-color .2s; min-height: 100%; }
+.opt label { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; padding: 14px 10px 13px; border-radius: 7px; border: 1px solid transparent; cursor: pointer; transition: background .2s, border-color .2s; min-height: 100%; }
 .opt label svg { width: 26px; height: 26px; color: var(--muted); transition: color .2s, transform .35s cubic-bezier(.2, .7, .2, 1); }
 .opt label:hover svg { transform: translateY(-2px) scale(1.06); }
 .opt label b { font-weight: 500; font-size: 15px; }
@@ -459,9 +459,10 @@ html.is-snap.can-anim .snap.is-in { opacity: 1; transform: none; }
 .pk-file span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .pk-file small { margin-left: auto; color: var(--muted); font: 12px var(--font); white-space: nowrap; }
 .pk-desc { margin: 0; color: var(--ink-2); font-size: 14.5px; }
+.pk-build { display: grid; gap: 6px; font-size: 14px; }
+.pk-build select { width: 100%; min-height: 44px; padding: 10px 36px 10px 12px; border: 1px solid var(--line); border-radius: 5px; background: var(--bg-2) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath d='m4 6 4 4 4-4' fill='none' stroke='%237D7D7D' stroke-width='1.5'/%3E%3C/svg%3E") no-repeat right 12px center; color: var(--ink); font: inherit; appearance: none; cursor: pointer; }
 .pk-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
 .pk-note { font-size: 12.5px; color: var(--muted); margin: 0; }
-.pk-note[data-on] { color: var(--amber); }
 .pk-detail.swap { animation: swap .45s cubic-bezier(.2, .7, .2, 1); }
 @keyframes swap { from { opacity: 0; transform: translateY(8px); } }
 @media (max-width: 959px) { .dl__in { grid-template-columns: minmax(0, 1fr); } }
@@ -743,6 +744,7 @@ html.is-snap.can-anim .snap.is-in { opacity: 1; transform: none; }
           <legend>Choose your platform</legend>
         </fieldset>
         <div class="pk-detail" id="pk-detail" aria-live="polite"></div>
+        <noscript><p class="pk-desc">Download the installer for your system from <a href="https://github.com/IgnjatRadojicic/DORAi/releases/latest">GitHub Releases</a>.</p></noscript>
       </div>
     </div>
   </section>
@@ -1385,37 +1387,76 @@ const ICONS = {
   mac: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.4 12.7c0-2.4 2-3.5 2.1-3.6-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.7.9-.8 0-1.9-.9-3.2-.8-1.6 0-3.1 1-4 2.4-1.7 2.9-.4 7.3 1.2 9.7.8 1.2 1.8 2.5 3 2.4 1.2 0 1.7-.8 3.1-.8 1.5 0 1.9.8 3.2.8 1.3 0 2.2-1.2 3-2.4.9-1.4 1.3-2.7 1.3-2.8-.1 0-2.5-1-2.5-3.9zM14 5.6c.7-.8 1.1-1.9 1-3-1 0-2.1.7-2.8 1.5-.6.7-1.2 1.8-1 2.9 1.1.1 2.1-.6 2.8-1.4z"/></svg>',
   linux: '<svg viewBox="0 0 24 24" fill="currentColor" fill-rule="evenodd"><path d="M12 1.8c-2.4 0-3.7 2-3.7 4.6 0 1.3.2 2.3-.6 3.6-1.1 1.7-2.8 3.9-2.8 6.5 0 .9.2 1.7.5 2.3l-1.3.8c-.6.4-.5 1.2.1 1.5l2.6 1.1c.6.3 1.3.1 1.6-.5l.3-.5c1 .4 2.1.6 3.3.6s2.3-.2 3.3-.6l.3.5c.3.6 1 .8 1.6.5l2.6-1.1c.6-.3.7-1.1.1-1.5l-1.3-.8c.3-.6.5-1.4.5-2.3 0-2.6-1.7-4.8-2.8-6.5-.8-1.3-.6-2.3-.6-3.6 0-2.6-1.3-4.6-3.7-4.6zM9 15.9a3 4 0 1 0 6 0 3 4 0 1 0-6 0zM10 6.6a.9 1.1 0 1 0 1.8 0 .9 1.1 0 1 0-1.8 0zM12.3 6.6a.9 1.1 0 1 0 1.8 0 .9 1.1 0 1 0-1.8 0zM10.7 8.9h2.6L12 10.3z"/></svg>',
   cli: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m7 9 3 3-3 3M12.5 15H17"/></svg>',
+  android: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m7 3 1.5 2M17 3l-1.5 2M6 10a6 6 0 0 1 12 0zM6 12v6h12v-6M3 11v6M21 11v6M9 18v3M15 18v3"/><path d="M9 8h.01M15 8h.01"/></svg>',
 };
+// Stable asset names let GitHub resolve the latest release without a browser API request.
+const RELEASE_URL = 'https://github.com/IgnjatRadojicic/DORAi/releases/latest';
 const PLATS = [
-  { id: 'win', name: 'Windows', file: 'dorai-app-windows-amd64.msi', meta: '64-bit · runtime included', desc: 'The desktop app with scan, review and export screens. It connects to your firm’s DORAi server.' },
-  { id: 'mac', name: 'macOS', file: 'dorai-app-darwin-arm64.dmg', meta: 'Apple silicon · runtime included', desc: 'The desktop app for macOS. An Intel build is released too.' },
-  { id: 'linux', name: 'Linux', file: 'dorai-app-linux-amd64.deb', meta: 'Debian, Ubuntu · runtime included', desc: 'The desktop app packaged for Debian-based distributions. An ARM build is released too.' },
-  { id: 'cli', name: 'CLI', file: 'dorai-cli-jvm.zip', meta: 'Needs Java 21', desc: 'The dorai command line. It checks a Terraform plan against a copy of your register and fails CI on High findings.' },
+  { id: 'win', name: 'Windows', builds: [
+    { arch: 'amd64', label: 'x64 (Intel / AMD)', file: 'dorai-app-windows-amd64.msi', meta: 'x64 · runtime included' },
+    { arch: 'arm64', label: 'ARM64 (Snapdragon)', file: 'dorai-app-windows-arm64.msi', meta: 'ARM64 · runtime included' },
+  ], desc: 'The desktop app with scan, review and export screens. It connects to your firm’s DORAi server.' },
+  { id: 'mac', name: 'macOS', builds: [
+    { arch: 'arm64', label: 'Apple silicon (M1 and newer)', file: 'dorai-app-darwin-arm64.dmg', meta: 'Apple silicon · runtime included' },
+    { arch: 'amd64', label: 'Intel', file: 'dorai-app-darwin-amd64.dmg', meta: 'Intel · runtime included' },
+  ], desc: 'The desktop app for macOS. Choose the build for your Mac’s processor.' },
+  { id: 'linux', name: 'Linux', builds: [
+    { arch: 'amd64', label: 'x64 (Intel / AMD)', file: 'dorai-app-linux-amd64.deb', meta: 'x64 · Debian, Ubuntu' },
+    { arch: 'arm64', label: 'ARM64', file: 'dorai-app-linux-arm64.deb', meta: 'ARM64 · Debian, Ubuntu' },
+  ], desc: 'The desktop app packaged for Debian-based distributions, with the runtime included.' },
+  { id: 'android', name: 'Android', builds: [
+    { arch: 'universal', file: 'dorai-app-android-universal.apk', meta: 'Universal APK' },
+  ], desc: 'The Android app connects to your firm’s DORAi server. Download the APK and open it on your Android device to install.' },
+  { id: 'cli', name: 'CLI', builds: [
+    { arch: 'jvm', file: 'dorai-cli-jvm.zip', meta: 'Needs Java 21' },
+  ], desc: 'The dorai command line. It checks a Terraform plan against a copy of your register and fails CI on High findings.' },
 ];
 function detectOS() {
   const ua = navigator.userAgent || '', pl = (navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || '';
+  if (/android/i.test(ua) || /android/i.test(pl)) return 'android';
+  // iPadOS can report MacIntel in desktop mode; it cannot run the macOS installer.
+  if (/iphone|ipad|ipod|cros/i.test(ua) || (/mac/i.test(pl) && navigator.maxTouchPoints > 1)) return null;
   if (/win/i.test(pl) || /windows/i.test(ua)) return 'win';
-  if (/mac/i.test(pl) && !/iphone|ipad/i.test(ua)) return 'mac';
-  if (/linux/i.test(pl) && !/android/i.test(ua)) return 'linux';
-  return 'win';
+  if (/mac/i.test(pl) || /macintosh/i.test(ua)) return 'mac';
+  if (/linux/i.test(pl) || /linux/i.test(ua)) return 'linux';
+  return null;
 }
 const pk = $('#pk'), pkd = $('#pk-detail'), osId = detectOS();
-pk.insertAdjacentHTML('beforeend', PLATS.map(p => `<div class="opt"><input type="radio" name="plat" id="pl-${p.id}" value="${p.id}"${p.id === osId ? ' checked' : ''}><label for="pl-${p.id}">${ICONS[p.id].replace('<svg', '<svg aria-hidden="true"')}<b>${p.name}</b></label></div>`).join(''));
+const chosenArch = {};
+let detectedArch = /arm64|aarch64|armv8/i.test(`${navigator.userAgent || ''} ${navigator.platform || ''}`) ? 'arm64' : null;
+let selectedPlat = osId || 'win';
+pk.insertAdjacentHTML('beforeend', PLATS.map(p => `<div class="opt"><input type="radio" name="plat" id="pl-${p.id}" value="${p.id}"${p.id === selectedPlat ? ' checked' : ''}><label for="pl-${p.id}">${ICONS[p.id].replace('<svg', '<svg aria-hidden="true"')}<b>${p.name}</b></label></div>`).join(''));
 function showPlat(id, anim) {
   const p = PLATS.find(x => x.id === id);
+  const arch = chosenArch[id] || (id === osId ? detectedArch : null);
+  const build = p.builds.find(b => b.arch === arch) || p.builds[0];
+  selectedPlat = id;
   pkd.innerHTML = `<div class="pk-top"><h3 class="pk-title">DORAi for ${p.name}</h3>${p.id === osId && p.id !== 'cli' ? '<span class="pk-badge">Your system</span>' : ''}</div>
-    <div class="pk-file">${ICONS[p.id].replace('<svg', '<svg aria-hidden="true"')}<span>${p.file}</span><small>${p.meta}</small></div>
+    ${p.builds.length > 1 ? `<div class="pk-build"><label for="pk-arch">Processor</label><select id="pk-arch">${p.builds.map(b => `<option value="${b.arch}"${b === build ? ' selected' : ''}>${b.label}</option>`).join('')}</select></div>` : ''}
+    <div class="pk-file">${ICONS[p.id].replace('<svg', '<svg aria-hidden="true"')}<span data-filename>${build.file}</span><small data-meta>${build.meta}</small></div>
     <p class="pk-desc">${p.desc}</p>
-    <div class="pk-actions"><a class="btn btn--primary" href="#download" data-file="${p.file}">Download for ${p.name} <span class="arr" aria-hidden="true">↓</span></a><span class="pk-note" id="pk-note">Version 1.1.1 · preview</span></div>`;
+    <div class="pk-actions"><a class="btn btn--primary" href="${RELEASE_URL}/download/${build.file}" data-file="${build.file}">Download for ${p.name}</a><a class="pk-note" href="${RELEASE_URL}">Latest release on GitHub</a></div>`;
   if (anim) { pkd.classList.remove('swap'); void pkd.offsetWidth; pkd.classList.add('swap'); }
-  pkd.querySelector('[data-file]').addEventListener('click', e => {
-    e.preventDefault();
-    const n = $('#pk-note'); n.setAttribute('data-on', '');
-    n.textContent = 'Preview: this button is not linked to the release file yet.';
+  const archPicker = pkd.querySelector('#pk-arch');
+  if (archPicker) archPicker.addEventListener('change', () => {
+    chosenArch[id] = archPicker.value;
+    const nextBuild = p.builds.find(b => b.arch === archPicker.value);
+    const link = pkd.querySelector('[data-file]');
+    link.href = `${RELEASE_URL}/download/${nextBuild.file}`;
+    link.dataset.file = nextBuild.file;
+    pkd.querySelector('[data-filename]').textContent = nextBuild.file;
+    pkd.querySelector('[data-meta]').textContent = nextBuild.meta;
   });
 }
 pk.addEventListener('change', e => showPlat(e.target.value, true));
-showPlat(osId, false);
+showPlat(selectedPlat, false);
+// Chromium can distinguish Intel/AMD from ARM even when the user agent is masked.
+if (navigator.userAgentData && navigator.userAgentData.getHighEntropyValues) {
+  navigator.userAgentData.getHighEntropyValues(['architecture']).then(({ architecture }) => {
+    detectedArch = /arm/i.test(architecture) ? 'arm64' : /x86/i.test(architecture) ? 'amd64' : detectedArch;
+    if (selectedPlat === osId && !chosenArch[osId]) showPlat(selectedPlat, false);
+  }).catch(() => {}); // Manual processor selection remains available when hints are denied.
+}
 
 /* ================= start ================= */
 setMode();
