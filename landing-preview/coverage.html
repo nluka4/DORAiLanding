@@ -389,7 +389,7 @@ th, td { text-align: left; vertical-align: top; }
         <li class="rv"><h3>Fills facts and repeats</h3><p>It puts scanned facts in the register’s templates, copies what you typed once into every template that needs it, and works out totals and defaults.</p></li>
         <li class="rv"><h3>Checks changes before deploy</h3><p>Five rules read a Terraform plan. A High finding fails the pipeline. No AI takes part.</p></li>
         <li class="rv"><h3>Points out gaps and risks</h3><p>Empty required cells, broken references and conflicting rows are errors. Weak backups, concentration and unknown vendors are warnings for a person to assess.</p></li>
-        <li class="rv"><h3>Builds the files</h3><p>All 15 templates as an EBA xBRL-CSV package, and a PDF for people. While errors remain, the package can only be a marked draft.</p></li>
+        <li class="rv"><h3>Builds the files</h3><p>All 15 templates as an EBA xBRL-CSV package, and a PDF for people. While required cells are missing, the package’s file name starts with DRAFT.</p></li>
       </ul>
       <div class="never rv">
         <h3>What it never does</h3>
@@ -490,12 +490,13 @@ th, td { text-align: left; vertical-align: top; }
       <div class="sec__h"><h2 class="sec-h" id="hand-h">Check by hand before filing</h2><p>Current gaps in version 1.1.1, found by testing or reading the code on 22 November 2026.</p></div>
       <ol class="hand">
         <li class="rv"><h3>“Ready” does not mean complete</h3><div><p>Readiness checks the rows that exist. With a scanned cloud and no providers, contracts or functions, the final package is still produced.</p><p class="do">Compare the register with your contract list and the inventory.</p></div></li>
-        <li class="rv"><h3>Some invalid values reach the final package</h3><div><p>An LEI with a bad checksum and an end date before the start date are caught by basic validation, but that validation does not block the export.</p><p class="do">Clear basic validation as well as readiness.</p></div></li>
+        <li class="rv"><h3>Some invalid values reach the final package</h3><div><p>An LEI with a bad checksum and an end date before the start date are caught by basic validation, but that validation does not block the export. In 1.1.1 the app then says it will save a draft, and saves a package without DRAFT in its name.</p><p class="do">Clear basic validation as well as readiness.</p></div></li>
         <li class="rv"><h3>Two kinds of accepted suggestion stay out of the register</h3><div><p>Accepting a service type or a business function records the decision only. The four judgement columns and GLEIF values are written to their cells.</p><p class="do">Enter the type or function on the service, or fix the tag.</p></div></li>
         <li class="rv"><h3>Pending suggestions don’t raise a warning</h3><div><p>They wait on the review screen. An affected cell shows as missing if it is required.</p><p class="do">Empty the review queue before export.</p></div></li>
         <li class="rv"><h3>A blank parent becomes “its own parent”</h3><div><p>Readiness never asks for the ultimate parent. The export fills a blank with the provider’s own code.</p><p class="do">Confirm the parent of every provider.</p></div></li>
         <li class="rv"><h3>Provider totals can mix currencies</h3><div><p>In testing, a €40,000 and a $1,000 contract were totalled as €41,000.</p><p class="do">Enter every contract of a provider in one currency.</p></div></li>
         <li class="rv"><h3>Some cell edits have no effect</h3><div><p>A legal name or contract cost set on the template cell, including a legal name accepted from GLEIF, loses to the value on the provider or contract.</p><p class="do">Edit the provider or contract itself.</p></div></li>
+        <li class="rv"><h3>The PDF can say “None” while work is left</h3><div><p>Its basic validation and “Data awaiting review” sections do not count empty template cells or pending cell suggestions. In our test they said passed and None, with 27 errors left.</p><p class="do">Read the readiness section of the PDF, or the Validation screen.</p></div></li>
       </ol>
     </div>
   </section>
