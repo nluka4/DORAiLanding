@@ -1,0 +1,845 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>What DORAi does and what you enter</title>
+<meta name="description" content="Who fills each of the 105 Register of Information columns: what DORAi does itself, what it suggests, what a person enters, and the tradeoffs.">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024'%3E %3Cdefs%3E%3ClinearGradient id='tile' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23FFFFFF'/%3E%3Cstop offset='1' stop-color='%23D9EEFD'/%3E%3C/linearGradient%3E%3C/defs%3E %3Cpath d='M210 20 H814 A190 190 0 0 1 1004 210 V814 A190 190 0 0 1 814 1004 H210 A190 190 0 0 1 20 814 V210 A190 190 0 0 1 210 20 Z' fill='url(%23tile)' stroke='%23BFDDF5' stroke-width='4' stroke-linecap='butt' stroke-linejoin='miter'/%3E %3Cg transform='translate(-619.393 -197.016) scale(3.5246)'%3E%3Cpath d='M300 100 C266 117 230 125 202 129 C200 210 238 264 300 294 C362 264 400 210 398 129 C370 125 334 117 300 100 Z' fill='%234BA8F0' stroke='%234BA8F0' stroke-width='6' stroke-linecap='butt' stroke-linejoin='round'/%3E%3Cpath d='M379 208 L383 218 V296 H375 V218 Z' fill='none' stroke='%23FFFFFF' stroke-width='8' stroke-linecap='butt' stroke-linejoin='round'/%3E%3Cpath d='M336 220 H426 A3 3 0 0 1 429 223 V223 A3 3 0 0 1 426 226 H336 A3 3 0 0 1 333 223 V223 A3 3 0 0 1 336 220 Z' fill='none' stroke='%23FFFFFF' stroke-width='8' stroke-linecap='butt' stroke-linejoin='round'/%3E%3Cpath d='M365 294 H393 A2 2 0 0 1 395 296 V299 A2 2 0 0 1 393 301 H365 A2 2 0 0 1 363 299 V296 A2 2 0 0 1 365 294 Z' fill='none' stroke='%23FFFFFF' stroke-width='8' stroke-linecap='butt' stroke-linejoin='round'/%3E%3Cpath d='M354 301 H404 A3 3 0 0 1 407 304 V305 A3 3 0 0 1 404 308 H354 A3 3 0 0 1 351 305 V304 A3 3 0 0 1 354 301 Z' fill='none' stroke='%23FFFFFF' stroke-width='8' stroke-linecap='butt' stroke-linejoin='round'/%3E%3Cpath d='M318 266 H358 C355 279 321 279 318 266 Z' fill='none' stroke='%23FFFFFF' stroke-width='8' stroke-linecap='butt' stroke-linejoin='round'/%3E%3Cpath d='M400 266 H440 C437 279 403 279 400 266 Z' fill='none' stroke='%23FFFFFF' stroke-width='8' stroke-linecap='butt' stroke-linejoin='round'/%3E%3Cpath d='M379 208 L383 218 V296 H375 V218 Z' fill='%230D254C'/%3E%3Cpath d='M336 220 H426 A3 3 0 0 1 429 223 V223 A3 3 0 0 1 426 226 H336 A3 3 0 0 1 333 223 V223 A3 3 0 0 1 336 220 Z' fill='%230D254C'/%3E%3Cpath d='M365 294 H393 A2 2 0 0 1 395 296 V299 A2 2 0 0 1 393 301 H365 A2 2 0 0 1 363 299 V296 A2 2 0 0 1 365 294 Z' fill='%230D254C'/%3E%3Cpath d='M354 301 H404 A3 3 0 0 1 407 304 V305 A3 3 0 0 1 404 308 H354 A3 3 0 0 1 351 305 V304 A3 3 0 0 1 354 301 Z' fill='%230D254C'/%3E%3Cpath d='M318 266 H358 C355 279 321 279 318 266 Z' fill='%230D254C'/%3E%3Cpath d='M400 266 H440 C437 279 403 279 400 266 Z' fill='%230D254C'/%3E%3Cpath d='M338 223 L321 265 M338 223 L355 265' fill='none' stroke='%230D254C' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M420 223 L403 265 M420 223 L437 265' fill='none' stroke='%230D254C' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M334.5 223 A3.5 3.5 0 1 0 341.5 223 A3.5 3.5 0 1 0 334.5 223 Z' fill='%230D254C'/%3E%3Cpath d='M416.5 223 A3.5 3.5 0 1 0 423.5 223 A3.5 3.5 0 1 0 416.5 223 Z' fill='%230D254C'/%3E%3C/g%3E %3C/svg%3E" type="image/svg+xml">
+<script>
+/* theme before first paint: saved choice, else the system setting */
+(function () {
+  var t = null;
+  try { t = localStorage.getItem('dorai-theme'); } catch (e) {}
+  if (t !== 'light' && t !== 'dark') t = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', t);
+})();
+</script>
+<script>document.documentElement.classList.add('js');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400..700&family=JetBrains+Mono:wght@400..600&display=swap" rel="stylesheet">
+<style>
+/* ---------- tokens: light by default, dark under [data-theme="dark"] ---------- */
+:root {
+  color-scheme: light;
+  /* JetBrains palette */
+  --jb-black: #000000; --jb-gray: #7D7D7D; --jb-silver: #CDCDCD;
+  --jb-yellow: #FCF84A; --jb-amber: #FDB60D; --jb-orange: #FC801D;
+  --jb-red: #FE2857; --jb-crimson: #DD1265; --jb-pink: #FF318C; --jb-magenta: #FF45ED;
+  --jb-purple: #AF1DF5; --jb-violet: #6B57FF; --jb-blue: #087CFA; --jb-cyan: #07C3F2;
+  --jb-green: #21D789; --jb-lime: #3DEA62;
+  --brand-grad: linear-gradient(120deg, var(--jb-cyan), var(--jb-blue) 38%, var(--jb-violet) 68%, var(--jb-pink));
+  /* light roles: green and orange are darkened so text on white stays readable */
+  --bg: #ffffff; --bg-2: #f5f5f5; --surface: #ffffff; --surface-2: #f8f8f8; --surface-3: #eeeeee;
+  --ink: var(--jb-black); --ink-2: #333333; --muted: #5e5e5e; --dim: var(--jb-gray);
+  --line: var(--jb-silver); --line-2: #e6e6e6; --frame: var(--jb-silver);
+  --accent: var(--jb-blue); --accent-ink: #ffffff; --accent-t: var(--jb-violet);
+  --green: color-mix(in srgb, var(--jb-green) 62%, #000); --amber: color-mix(in srgb, var(--jb-orange) 72%, #000); --red: var(--jb-crimson); --ai: var(--jb-purple); --ai-t: var(--jb-purple);
+  --on-sem: #ffffff; --mk: var(--jb-gray);
+  --code-k: var(--jb-violet); --code-s: var(--jb-crimson); --code-n: #a6a6a6; --hunk: var(--jb-violet);
+  --ai-bg: color-mix(in srgb, var(--jb-purple) 4%, #ffffff); --avatar: #e8e8e8;
+  --shadow: 0 1px 2px rgb(0 0 0 / .06), 0 30px 60px -32px rgb(0 0 0 / .25);
+  --glow: .5;
+  --font: "Host Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --gutter: clamp(16px, 4vw, 48px);
+  --maxw: 1320px;
+  --wt-len: 960vh;
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: var(--jb-black); --bg-2: #0a0a0a; --surface: #121212; --surface-2: #191919; --surface-3: #242424;
+  --ink: #ffffff; --ink-2: var(--jb-silver); --muted: #a3a3a3; --dim: var(--jb-gray);
+  --line: #2a2a2a; --line-2: #1c1c1c; --frame: #363636;
+  --accent: var(--jb-blue); --accent-ink: #ffffff; --accent-t: var(--jb-cyan);
+  --green: var(--jb-green); --amber: var(--jb-amber); --red: var(--jb-red); --ai: var(--jb-purple); --ai-t: var(--jb-magenta);
+  --on-sem: var(--jb-black); --mk: var(--jb-silver);
+  --code-k: var(--jb-pink); --code-s: var(--jb-amber); --code-n: #555555; --hunk: color-mix(in srgb, var(--jb-violet) 70%, #ffffff);
+  --ai-bg: color-mix(in srgb, var(--jb-purple) 7%, #0a0a0a); --avatar: #2a2a2a;
+  --shadow: 0 1px 0 rgb(255 255 255 / .04) inset, 0 50px 90px -40px rgb(0 0 0 / .95);
+  --glow: 1;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 16px/1.5 var(--font); -webkit-font-smoothing: antialiased; overflow-x: clip; transition: background-color .35s, color .35s; }
+a { color: inherit; }
+button { font: inherit; color: inherit; }
+::selection { background: color-mix(in srgb, var(--accent) 35%, transparent); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
+.wrap { width: min(100% - 2 * var(--gutter), var(--maxw)); margin-inline: auto; }
+.sr { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.mono { font-family: var(--mono); }
+.kicker { font: 500 12px/1.4 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--accent-t); margin: 0; }
+.sec-h { font-size: clamp(30px, 3.6vw, 48px); line-height: 1.06; letter-spacing: -.035em; font-weight: 500; margin: 12px 0 12px; text-wrap: balance; }
+
+/* ---------- buttons ---------- */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; height: 46px; padding: 0 20px; border-radius: 5px; font: 500 15px/1 var(--font); text-decoration: none; border: 1px solid transparent; cursor: pointer; transition: background .2s, border-color .2s, transform .2s; white-space: nowrap; }
+.btn--primary { background: color-mix(in srgb, var(--accent) 88%, #000000); color: var(--accent-ink); }
+.btn--primary:hover { background: var(--jb-violet); }
+.btn--ghost { border-color: var(--line); background: color-mix(in srgb, var(--surface) 60%, transparent); color: var(--ink); }
+.btn--ghost:hover { border-color: var(--dim); }
+.btn--sm { height: 36px; padding: 0 14px; font-size: 13.5px; }
+.btn .arr { transition: transform .25s; }
+.btn:hover .arr { transform: translateY(2px); }
+
+/* ---------- nav ---------- */
+.nav { position: fixed; inset: 0 0 auto; z-index: 50; height: 60px; display: flex; align-items: center; background: color-mix(in srgb, var(--bg) 78%, transparent); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid transparent; transition: border-color .25s, background-color .35s; }
+.nav.is-scrolled { border-bottom-color: var(--line); }
+.nav__in { display: flex; align-items: center; gap: 22px; }
+.brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 600; letter-spacing: -.02em; text-decoration: none; font-size: 17px; }
+.brand .i { color: var(--accent-t); }
+.nav__links { display: flex; gap: 24px; margin-left: auto; font-size: 14px; }
+.nav__links a { color: var(--muted); text-decoration: none; transition: color .2s; }
+.nav__links a:hover { color: var(--ink); }
+.theme-btn { width: 36px; height: 36px; display: grid; place-items: center; border-radius: 5px; border: 1px solid var(--line); background: transparent; color: var(--ink-2); cursor: pointer; transition: border-color .2s, color .2s; overflow: hidden; }
+.theme-btn:hover { border-color: var(--dim); color: var(--ink); }
+.theme-btn svg { width: 17px; height: 17px; transition: transform .5s cubic-bezier(.2, .7, .2, 1), opacity .3s; grid-area: 1 / 1; }
+:root[data-theme="dark"] .theme-btn .sun, :root:not([data-theme="dark"]) .theme-btn .moon { transform: translateY(26px) rotate(90deg); opacity: 0; }
+.nav__links a { white-space: nowrap; }
+@media (max-width: 799px) { .nav__links a:not([data-page]) { display: none; } }
+@media (max-width: 639px) { .nav__in { gap: 10px; } .nav__links { font-size: 13px; } .nav .btn--sm { padding: 0 10px; } }
+
+
+:root { --c-scan: var(--jb-blue); --c-rule: #1BB874; --c-ai: var(--jb-purple); --c-lookup: var(--jb-pink); --c-person: var(--jb-orange); }
+:root[data-theme="dark"] { --c-rule: #17A466; --c-person: #D9660F; }
+html { scroll-padding-top: 78px; }
+code { font-family: var(--mono); font-size: .88em; }
+.nv-icon { width: 28px; height: 28px; flex: none; overflow: visible; }
+.nv-icon .sc-beam { transform-box: fill-box; transform-origin: 50% 6%; animation: swing 1.4s cubic-bezier(.3, .6, .4, 1) .4s both; }
+.brand:hover .sc-beam { animation: swing2 1.4s cubic-bezier(.3, .6, .4, 1) both; }
+@keyframes swing { 0% { transform: rotate(-16deg); } 25% { transform: rotate(10deg); } 50% { transform: rotate(-5deg); } 75% { transform: rotate(2deg); } 100% { transform: none; } }
+@keyframes swing2 { 0% { transform: rotate(-14deg); } 25% { transform: rotate(9deg); } 50% { transform: rotate(-4deg); } 75% { transform: rotate(1.5deg); } 100% { transform: none; } }
+
+main h1 { margin: 0; font-size: clamp(40px, 5.8vw, 84px); line-height: 1.02; letter-spacing: -.045em; font-weight: 500; text-wrap: balance; }
+main h1 span { display: block; animation: lineIn 1s cubic-bezier(.2, .7, .2, 1) both; }
+main h1 span + span { color: var(--muted); animation-delay: .16s; }
+@keyframes lineIn { from { opacity: 0; transform: translateY(.35em); filter: blur(10px); } }
+.sec { padding: clamp(72px, 11vh, 120px) 0; border-top: 1px solid var(--line-2); }
+.sec__h { max-width: 720px; margin-bottom: 40px; }
+.sec__h p { margin: 0; color: var(--ink-2); }
+
+/* the split: one square per column */
+.split { padding: clamp(120px, 18vh, 176px) 0 clamp(64px, 10vh, 100px); }
+.chart { position: relative; margin-top: clamp(40px, 6vh, 64px); }
+.chart__bar { display: flex; align-items: center; justify-content: space-between; gap: 14px 28px; flex-wrap: wrap; margin-bottom: 10px; }
+.chart__t { margin: 0; color: var(--muted); font-size: 14.5px; }
+.seg { display: inline-flex; gap: 4px; padding: 4px; border: 1px solid var(--line); border-radius: 7px; }
+.seg button, .filters button { border: 0; background: none; border-radius: 4px; padding: 7px 12px; color: var(--muted); font: 500 13.5px/1.3 var(--font); cursor: pointer; transition: background .2s, color .2s; }
+.seg button[aria-pressed="true"], .filters button[aria-pressed="true"] { background: var(--surface-3); color: var(--ink); }
+.legend { list-style: none; margin: 0; padding: 12px 0; display: none; flex-wrap: wrap; gap: 8px 18px; font-size: 13.5px; color: var(--ink-2); }
+.legend li { display: inline-flex; align-items: center; gap: 8px; }
+.chart[data-view="template"] .legend { display: flex; }
+.grp { display: grid; grid-template-columns: 370px minmax(0, 1fr); gap: 10px 28px; align-items: center; padding: 14px 0; border-top: 1px solid var(--line-2); }
+.grp__l { margin: 0; display: flex; align-items: center; gap: 14px; line-height: 1.25; }
+.grp__l b { min-width: 48px; font-size: 38px; font-weight: 500; letter-spacing: -.04em; }
+.grp__l span { font-weight: 500; }
+.grp__l small { display: block; margin-top: 3px; color: var(--muted); font-size: 13px; font-weight: 400; }
+.grp__s { display: flex; flex-wrap: wrap; }
+.grp--t { display: none; padding: 5px 0; }
+.grp--t .grp__l { font-size: 12.5px; }
+.grp--t .grp__l code { flex: none; width: 62px; }
+.grp--t .grp__l span { color: var(--muted); font-weight: 400; }
+.chart[data-view="template"] .grp { display: none; }
+.chart[data-view="template"] .grp--t { display: grid; }
+.sw { display: inline-block; flex: none; width: 11px; height: 11px; border-radius: 3px; }
+.sw--scan { background: var(--c-scan); } .sw--rule { background: var(--c-rule); } .sw--ai { background: var(--c-ai); } .sw--lookup { background: var(--c-lookup); } .sw--person { background: var(--c-person); }
+.sq { position: relative; width: 26px; height: 26px; cursor: pointer; border-radius: 5px; }
+.sq::before { content: ""; position: absolute; inset: 1px; border-radius: 4px; transition: transform .18s; }
+.js .sq::before { animation: sqIn .6s cubic-bezier(.2, .8, .3, 1.3) calc(var(--i) * 11ms + .35s) backwards; }
+.js .chart.has-moved .sq::before { animation: none; }
+@keyframes sqIn { from { opacity: 0; transform: translateY(-26px) scale(.2) rotate(40deg); } }
+.sq:hover::before, .sq:focus-visible::before { transform: scale(1.22); }
+.sq--scan::before { background: var(--c-scan); } .sq--rule::before { background: var(--c-rule); } .sq--ai::before { background: var(--c-ai); } .sq--lookup::before { background: var(--c-lookup); } .sq--person::before { background: var(--c-person); }
+.tip { position: fixed; z-index: 60; left: 0; top: 0; max-width: min(320px, 100vw - 24px); padding: 10px 12px; border: 1px solid var(--line); border-radius: 7px; background: var(--surface); box-shadow: var(--shadow); font-size: 13px; line-height: 1.35; pointer-events: none; }
+.tip[hidden] { display: none; }
+.tip strong, .tip span { display: block; }
+.tip strong { font: 600 12.5px var(--mono); margin-bottom: 4px; }
+.tip span:last-child { margin-top: 5px; color: var(--muted); }
+.caveat { max-width: 78ch; margin: 22px 0 0; color: var(--muted); font-size: 14px; }
+
+/* what it does */
+.does { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 34px 40px; }
+.does h3, .never h3 { margin: 0 0 7px; font-size: 20px; font-weight: 500; letter-spacing: -.02em; }
+.does p { margin: 0; color: var(--muted); font-size: 15px; }
+.never { margin-top: 56px; padding-top: 26px; border-top: 1px solid var(--line-2); }
+.never ul { list-style: none; margin: 16px 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 40px; color: var(--ink-2); }
+.never li { display: flex; gap: 12px; }
+.never li::before { content: ""; flex: none; width: 12px; height: 2px; margin-top: .75em; background: var(--red); }
+
+/* what you enter */
+.steps { position: relative; list-style: none; margin: 0; padding: 0 0 0 34px; }
+.steps::before, .steps::after { content: ""; position: absolute; left: 5px; top: 8px; bottom: 8px; width: 2px; background: var(--line-2); }
+.steps::after { background: var(--c-person); transform-origin: top; transform: scaleY(var(--p, 1)); }
+.step { position: relative; display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: 8px 40px; padding: 0 0 38px; }
+.step::before { content: ""; position: absolute; z-index: 1; left: -34px; top: 8px; width: 12px; height: 12px; border-radius: 50%; background: var(--bg); border: 2px solid var(--c-person); }
+.step__h h3 { margin: 0; font-size: 22px; line-height: 1.2; font-weight: 500; letter-spacing: -.025em; }
+.step__h p { margin: 5px 0 0; color: var(--muted); font-size: 14px; }
+.step__b > p { margin: 0; color: var(--ink-2); }
+.step__b code { overflow-wrap: anywhere; }
+.more { margin-top: 10px; }
+.more summary { cursor: pointer; width: fit-content; color: var(--accent-t); font-size: 14px; }
+.clist { list-style: none; margin: 10px 0 0; padding: 0; }
+.clist li { display: grid; grid-template-columns: 112px minmax(0, 1fr); gap: 12px; padding: 8px 0; border-top: 1px solid var(--line-2); font-size: 14px; }
+.clist small, .ctable small { display: block; margin-top: 2px; color: var(--muted); font-size: 12.5px; }
+
+/* tradeoffs */
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: left; vertical-align: top; }
+.trade th, .trade td { padding: 18px 22px 18px 0; border-top: 1px solid var(--line-2); font-size: 15px; }
+.trade thead th { border: 0; padding-top: 0; color: var(--muted); font-weight: 400; }
+.trade tbody th { width: 24%; font-size: 17px; line-height: 1.3; font-weight: 500; letter-spacing: -.015em; }
+.trade td { color: var(--ink-2); }
+.trade td:nth-child(3) { width: 31%; }
+
+/* check by hand */
+.hand { list-style: none; margin: 0; padding: 0; counter-reset: h; }
+.hand li { position: relative; counter-increment: h; display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: 6px 40px; padding: 20px 0 20px 46px; border-top: 1px solid var(--line-2); }
+.hand li::before { content: counter(h); position: absolute; left: 0; top: 18px; width: 28px; height: 28px; display: grid; place-items: center; border-radius: 50%; border: 1px solid var(--amber); font-size: 13px; }
+.hand h3 { margin: 0; font-size: 18px; line-height: 1.3; font-weight: 500; letter-spacing: -.02em; }
+.hand p { margin: 0; color: var(--ink-2); }
+.hand .do { margin-top: 6px; color: var(--ink); font-weight: 500; }
+
+/* every column */
+.filters { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 18px; }
+.filters button { display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--line); }
+.filters b { color: var(--ink); font-weight: 500; }
+.tpl { border-top: 1px solid var(--line-2); }
+.tpl[hidden], .ctable tr[hidden] { display: none; }
+.tpl summary { display: grid; grid-template-columns: 70px minmax(0, 1fr) auto; gap: 6px 14px; align-items: center; padding: 15px 0; cursor: pointer; list-style: none; }
+.tpl summary::-webkit-details-marker { display: none; }
+.tpl summary em { display: flex; flex-wrap: wrap; gap: 3px; }
+.tpl summary em .sw { width: 9px; height: 9px; }
+.tpl summary:hover > span { color: var(--accent-t); }
+.ctable { margin-bottom: 18px; font-size: 14px; }
+.ctable th { padding: 6px 16px 6px 0; color: var(--muted); font-weight: 400; }
+.ctable td { padding: 9px 16px 9px 0; border-top: 1px solid var(--line-2); }
+.ctable td:first-child { width: 130px; }
+.ctable td:nth-child(3) { width: 200px; }
+.ctable td:nth-child(4) { width: 240px; color: var(--muted); }
+.ctable tr.is-lit { background: color-mix(in srgb, var(--accent) 12%, transparent); }
+.who { display: inline-flex; align-items: center; gap: 8px; }
+.end { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 48px; }
+
+.js .rv { opacity: 0; translate: 0 20px; transition: opacity .7s ease, translate .8s cubic-bezier(.2, .7, .2, 1); }
+.js .rv.is-in { opacity: 1; translate: none; }
+
+@media (max-width: 899px) {
+  .grp { grid-template-columns: minmax(0, 1fr); }
+  .does { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .step, .hand li { grid-template-columns: minmax(0, 1fr); }
+  .trade, .trade tbody, .trade tr, .trade th, .trade td { display: block; width: auto !important; }
+  .trade thead { display: none; }
+  .trade tr { padding: 18px 0; border-top: 1px solid var(--line-2); }
+  .trade th, .trade td { border: 0; padding: 3px 0; }
+  .trade td::before { content: attr(data-l) ": "; color: var(--muted); }
+  .ctable, .ctable tbody, .ctable tr, .ctable td { display: block; width: auto !important; }
+  .ctable thead { display: none; }
+  .ctable tr { padding: 10px 0; border-top: 1px solid var(--line-2); }
+  .ctable td { border: 0; padding: 2px 0; overflow-wrap: anywhere; }
+}
+@media (max-width: 559px) {
+  .does, .never ul { grid-template-columns: minmax(0, 1fr); }
+  .sq { width: 24px; height: 24px; }
+  .clist li { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+  .tpl summary { grid-template-columns: 62px minmax(0, 1fr); }
+  .tpl summary em { grid-column: 2; }
+}
+
+/* ---------- footer ---------- */
+.foot { border-top: 1px solid var(--line-2); padding: 34px 0 40px; color: var(--muted); font-size: 13px; }
+.foot__in { display: flex; flex-wrap: wrap; gap: 14px 28px; align-items: center; }
+.foot__in p { margin: 0; }
+.foot__in .sp { margin-left: auto; }
+@media (max-width: 639px) { .foot__in .sp { margin-left: 0; } }
+
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .js .rv { opacity: 1; translate: none; }
+}
+@media print { .js .rv { opacity: 1; translate: none; } }
+</style>
+</head>
+<body>
+<a class="sr" href="#main">Skip to content</a>
+<header class="nav" id="nav">
+  <div class="wrap nav__in">
+    <a class="brand" href="index.html" aria-label="DORAi home"><svg class="nv-icon" viewBox="0 0 1024 1024" aria-hidden="true"><defs><linearGradient id="nv-tile" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#D9EEFD"/></linearGradient></defs><path d="M210 20 H814 A190 190 0 0 1 1004 210 V814 A190 190 0 0 1 814 1004 H210 A190 190 0 0 1 20 814 V210 A190 190 0 0 1 210 20 Z" fill="url(#nv-tile)" stroke="#BFDDF5" stroke-width="4"/><g transform="translate(-619.393 -197.016) scale(3.5246)"><path d="M300 100 C266 117 230 125 202 129 C200 210 238 264 300 294 C362 264 400 210 398 129 C370 125 334 117 300 100 Z" fill="#4BA8F0" stroke="#4BA8F0" stroke-width="6" stroke-linejoin="round"/><g class="sc-pole"><path d="M379 208 L383 218 V296 H375 V218 Z M365 294 H393 A2 2 0 0 1 395 296 V299 A2 2 0 0 1 393 301 H365 A2 2 0 0 1 363 299 V296 A2 2 0 0 1 365 294 Z M354 301 H404 A3 3 0 0 1 407 304 V305 A3 3 0 0 1 404 308 H354 A3 3 0 0 1 351 305 V304 A3 3 0 0 1 354 301 Z" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linejoin="round"/><path d="M379 208 L383 218 V296 H375 V218 Z M365 294 H393 A2 2 0 0 1 395 296 V299 A2 2 0 0 1 393 301 H365 A2 2 0 0 1 363 299 V296 A2 2 0 0 1 365 294 Z M354 301 H404 A3 3 0 0 1 407 304 V305 A3 3 0 0 1 404 308 H354 A3 3 0 0 1 351 305 V304 A3 3 0 0 1 354 301 Z" fill="#0D254C"/></g><g class="sc-tilt"><g class="sc-beam"><path d="M336 220 H426 A3 3 0 0 1 429 223 V223 A3 3 0 0 1 426 226 H336 A3 3 0 0 1 333 223 V223 A3 3 0 0 1 336 220 Z M318 266 H358 C355 279 321 279 318 266 Z M400 266 H440 C437 279 403 279 400 266 Z" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linejoin="round"/><path d="M336 220 H426 A3 3 0 0 1 429 223 V223 A3 3 0 0 1 426 226 H336 A3 3 0 0 1 333 223 V223 A3 3 0 0 1 336 220 Z M318 266 H358 C355 279 321 279 318 266 Z M400 266 H440 C437 279 403 279 400 266 Z" fill="#0D254C"/><path d="M338 223 L321 265 M338 223 L355 265 M420 223 L403 265 M420 223 L437 265" fill="none" stroke="#0D254C" stroke-width="5" stroke-linecap="round"/><path d="M334.5 223 A3.5 3.5 0 1 0 341.5 223 A3.5 3.5 0 1 0 334.5 223 Z M416.5 223 A3.5 3.5 0 1 0 423.5 223 A3.5 3.5 0 1 0 416.5 223 Z" fill="#0D254C"/></g></g></g></svg><span>DORA<span class="i">i</span></span></a>
+    <nav class="nav__links" aria-label="Main">
+      <a href="#does">What it does</a>
+      <a href="#you">What you enter</a>
+      <a href="#tradeoffs">Tradeoffs</a>
+      <a href="index.html#faq" data-page>FAQ</a>
+    </nav>
+    <button class="theme-btn" type="button" id="theme" aria-label="Switch to light theme">
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6 6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4"/></svg>
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+    </button>
+    <a class="btn btn--primary btn--sm" href="index.html#download">Download</a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="split" aria-labelledby="split-h">
+    <div class="wrap">
+      <h1 id="split-h"><span>What DORAi does.</span> <span>What you still do.</span></h1>
+      <div class="chart" id="chart" data-view="who">
+        <div class="chart__bar">
+          <p class="chart__t">105 columns across 15 templates. One square is one column.</p>
+          <div class="seg" role="group" aria-label="Group the squares">
+            <button type="button" data-view="who" aria-pressed="true">By who fills it</button>
+            <button type="button" data-view="template" aria-pressed="false">By template</button>
+          </div>
+        </div>
+        <ul class="legend"><li><i class="sw sw--scan" aria-hidden="true"></i>From the cloud scan</li><li><i class="sw sw--rule" aria-hidden="true"></i>Filled by rules</li><li><i class="sw sw--ai" aria-hidden="true"></i>Drafted by AI</li><li><i class="sw sw--lookup" aria-hidden="true"></i>Looked up in GLEIF</li><li><i class="sw sw--person" aria-hidden="true"></i>Entered by you</li></ul>
+        <div class="grp" data-group="scan">
+          <p class="grp__l"><i class="sw sw--scan" aria-hidden="true"></i><b>6</b><span>From the cloud scan<small>Country, storage, cost and currency of linked resources</small></span></p>
+          <div class="grp__s"><span class="sq sq--scan" style="--i:24" data-t="B_02.01" data-who="scan" data-code="B_02.01.0040" data-name="Currency of the amount reported in B_02.01.0050"></span><span class="sq sq--scan" style="--i:25" data-t="B_02.01" data-who="scan" data-code="B_02.01.0050" data-name="Annual expense or estimated cost of the contractual arrangement for the past year"></span><span class="sq sq--scan" style="--i:38" data-t="B_02.02" data-who="scan" data-code="B_02.02.0130" data-name="Country of provision of the ICT services"></span><span class="sq sq--scan" style="--i:39" data-t="B_02.02" data-who="scan" data-code="B_02.02.0140" data-name="Storage of data"></span><span class="sq sq--scan" style="--i:40" data-t="B_02.02" data-who="scan" data-code="B_02.02.0150" data-name="Location of the data at rest (storage)"></span><span class="sq sq--scan" style="--i:41" data-t="B_02.02" data-who="scan" data-code="B_02.02.0160" data-name="Location of management of the data (processing)"></span></div>
+        </div>
+        <div class="grp" data-group="rule">
+          <p class="grp__l"><i class="sw sw--rule" aria-hidden="true"></i><b>41</b><span>Filled by rules<small>Copied from what you typed once, calculated, or a default</small></span></p>
+          <div class="grp__s"><span class="sq sq--rule" style="--i:5" data-t="B_01.01" data-who="rule" data-code="B_01.01.0060" data-name="Date of the reporting"></span><span class="sq sq--rule" style="--i:6" data-t="B_01.02" data-who="rule" data-code="B_01.02.0010" data-name="LEI of the entity"></span><span class="sq sq--rule" style="--i:7" data-t="B_01.02" data-who="rule" data-code="B_01.02.0020" data-name="Name of the entity"></span><span class="sq sq--rule" style="--i:8" data-t="B_01.02" data-who="rule" data-code="B_01.02.0030" data-name="Country of the entity"></span><span class="sq sq--rule" style="--i:9" data-t="B_01.02" data-who="rule" data-code="B_01.02.0040" data-name="Type of entity"></span><span class="sq sq--rule" style="--i:12" data-t="B_01.02" data-who="rule" data-code="B_01.02.0070" data-name="Date of last update"></span><span class="sq sq--rule" style="--i:14" data-t="B_01.02" data-who="rule" data-code="B_01.02.0090" data-name="Date of deletion in the register of information"></span><span class="sq sq--rule" style="--i:26" data-t="B_02.02" data-who="rule" data-code="B_02.02.0010" data-name="Contractual arrangement reference number"></span><span class="sq sq--rule" style="--i:27" data-t="B_02.02" data-who="rule" data-code="B_02.02.0020" data-name="LEI of the entity making use of the ICT service(s)"></span><span class="sq sq--rule" style="--i:28" data-t="B_02.02" data-who="rule" data-code="B_02.02.0030" data-name="Identification code of the ICT third-party service provider"></span><span class="sq sq--rule" style="--i:29" data-t="B_02.02" data-who="rule" data-code="B_02.02.0040" data-name="Type of code to identify the ICT third-party service provider"></span><span class="sq sq--rule" style="--i:33" data-t="B_02.02" data-who="rule" data-code="B_02.02.0080" data-name="End date of the contractual arrangement"></span><span class="sq sq--rule" style="--i:46" data-t="B_02.03" data-who="rule" data-code="B_02.03.0030" data-name="Link"></span><span class="sq sq--rule" style="--i:47" data-t="B_03.01" data-who="rule" data-code="B_03.01.0010" data-name="Contractual arrangement reference number"></span><span class="sq sq--rule" style="--i:48" data-t="B_03.01" data-who="rule" data-code="B_03.01.0020" data-name="LEI of the entity signing the contractual arrangement"></span><span class="sq sq--rule" style="--i:49" data-t="B_03.01" data-who="rule" data-code="B_03.01.0030" data-name="Link"></span><span class="sq sq--rule" style="--i:50" data-t="B_03.02" data-who="rule" data-code="B_03.02.0010" data-name="Contractual arrangement reference number"></span><span class="sq sq--rule" style="--i:51" data-t="B_03.02" data-who="rule" data-code="B_03.02.0020" data-name="Identification code of the ICT third-party service provider"></span><span class="sq sq--rule" style="--i:52" data-t="B_03.02" data-who="rule" data-code="B_03.02.0030" data-name="Type of code to identify the ICT third-party service provider"></span><span class="sq sq--rule" style="--i:55" data-t="B_03.03" data-who="rule" data-code="B_03.03.0031" data-name="Link"></span><span class="sq sq--rule" style="--i:56" data-t="B_04.01" data-who="rule" data-code="B_04.01.0010" data-name="Contractual arrangement reference number"></span><span class="sq sq--rule" style="--i:57" data-t="B_04.01" data-who="rule" data-code="B_04.01.0020" data-name="LEI of the entity making use of the ICT service(s)"></span><span class="sq sq--rule" style="--i:58" data-t="B_04.01" data-who="rule" data-code="B_04.01.0030" data-name="Nature of the entity making use of the ICT service(s)"></span><span class="sq sq--rule" style="--i:61" data-t="B_05.01" data-who="rule" data-code="B_05.01.0020" data-name="Type of code to identify the ICT third-party service provider"></span><span class="sq sq--rule" style="--i:65" data-t="B_05.01" data-who="rule" data-code="B_05.01.0060" data-name="Name of the ICT third-party service provider in Latin alphabet"></span><span class="sq sq--rule" style="--i:68" data-t="B_05.01" data-who="rule" data-code="B_05.01.0090" data-name="Currency of the amount reported in B_05.01.0100"></span><span class="sq sq--rule" style="--i:69" data-t="B_05.01" data-who="rule" data-code="B_05.01.0100" data-name="Total annual expense or estimated cost of the ICT third-party service provider"></span><span class="sq sq--rule" style="--i:72" data-t="B_05.02" data-who="rule" data-code="B_05.02.0010" data-name="Contractual arrangement reference number"></span><span class="sq sq--rule" style="--i:73" data-t="B_05.02" data-who="rule" data-code="B_05.02.0020" data-name="Type of ICT services"></span><span class="sq sq--rule" style="--i:74" data-t="B_05.02" data-who="rule" data-code="B_05.02.0030" data-name="Identification code of the ICT third-party service provider"></span><span class="sq sq--rule" style="--i:75" data-t="B_05.02" data-who="rule" data-code="B_05.02.0040" data-name="Type of code to identify the ICT third-party service provider"></span><span class="sq sq--rule" style="--i:76" data-t="B_05.02" data-who="rule" data-code="B_05.02.0050" data-name="Rank"></span><span class="sq sq--rule" style="--i:78" data-t="B_05.02" data-who="rule" data-code="B_05.02.0070" data-name="Type of code to identify the recipient of sub-contracted ICT services"></span><span class="sq sq--rule" style="--i:82" data-t="B_06.01" data-who="rule" data-code="B_06.01.0040" data-name="LEI of the entity"></span><span class="sq sq--rule" style="--i:89" data-t="B_07.01" data-who="rule" data-code="B_07.01.0010" data-name="Contractual arrangement reference number"></span><span class="sq sq--rule" style="--i:90" data-t="B_07.01" data-who="rule" data-code="B_07.01.0020" data-name="Identification code of the ICT third-party service provider"></span><span class="sq sq--rule" style="--i:91" data-t="B_07.01" data-who="rule" data-code="B_07.01.0030" data-name="Type of code to identify the ICT third-party service provider"></span><span class="sq sq--rule" style="--i:92" data-t="B_07.01" data-who="rule" data-code="B_07.01.0040" data-name="Type of ICT services"></span><span class="sq sq--rule" style="--i:101" data-t="B_99.01" data-who="rule" data-code="B_99.01.C0010" data-name="Column code"></span><span class="sq sq--rule" style="--i:102" data-t="B_99.01" data-who="rule" data-code="B_99.01.C0020" data-name="Column name"></span><span class="sq sq--rule" style="--i:103" data-t="B_99.01" data-who="rule" data-code="B_99.01.C0030" data-name="Option"></span></div>
+        </div>
+        <div class="grp" data-group="ai">
+          <p class="grp__l"><i class="sw sw--ai" aria-hidden="true"></i><b>4</b><span>Drafted by AI<small>Four judgement columns. A person accepts or rejects</small></span></p>
+          <div class="grp__s"><span class="sq sq--ai" style="--i:42" data-t="B_02.02" data-who="ai" data-code="B_02.02.0170" data-name="Sensitiveness of the data stored by the ICT third-party service provider"></span><span class="sq sq--ai" style="--i:43" data-t="B_02.02" data-who="ai" data-code="B_02.02.0180" data-name="Level of reliance on the ICT service supporting the critical or important function"></span><span class="sq sq--ai" style="--i:80" data-t="B_06.01" data-who="ai" data-code="B_06.01.0020" data-name="Licensed activity"></span><span class="sq sq--ai" style="--i:93" data-t="B_07.01" data-who="ai" data-code="B_07.01.0050" data-name="Substitutability of the ICT third-party service provider"></span></div>
+        </div>
+        <div class="grp" data-group="lookup">
+          <p class="grp__l"><i class="sw sw--lookup" aria-hidden="true"></i><b>4</b><span>Looked up in GLEIF<small>Provider identity, on request. A person accepts</small></span></p>
+          <div class="grp__s"><span class="sq sq--lookup" style="--i:60" data-t="B_05.01" data-who="lookup" data-code="B_05.01.0010" data-name="Identification code of the ICT third-party service provider"></span><span class="sq sq--lookup" style="--i:67" data-t="B_05.01" data-who="lookup" data-code="B_05.01.0080" data-name="Country of the ICT third-party service provider&#x27;s headquarters"></span><span class="sq sq--lookup" style="--i:70" data-t="B_05.01" data-who="lookup" data-code="B_05.01.0110" data-name="Identification code of the provider&#x27;s ultimate parent undertaking"></span><span class="sq sq--lookup" style="--i:71" data-t="B_05.01" data-who="lookup" data-code="B_05.01.0120" data-name="Type of code to identify the provider&#x27;s ultimate parent undertaking"></span></div>
+        </div>
+        <div class="grp" data-group="person">
+          <p class="grp__l"><i class="sw sw--person" aria-hidden="true"></i><b>50</b><span>Entered by you<small>Setup, contracts, records and judgement</small></span></p>
+          <div class="grp__s"><span class="sq sq--person" style="--i:0" data-t="B_01.01" data-who="person" data-code="B_01.01.0010" data-name="LEI of the entity maintaining the register"></span><span class="sq sq--person" style="--i:1" data-t="B_01.01" data-who="person" data-code="B_01.01.0020" data-name="Name of the entity"></span><span class="sq sq--person" style="--i:2" data-t="B_01.01" data-who="person" data-code="B_01.01.0030" data-name="Country of the entity"></span><span class="sq sq--person" style="--i:3" data-t="B_01.01" data-who="person" data-code="B_01.01.0040" data-name="Type of entity"></span><span class="sq sq--person" style="--i:4" data-t="B_01.01" data-who="person" data-code="B_01.01.0050" data-name="Competent authority"></span><span class="sq sq--person" style="--i:10" data-t="B_01.02" data-who="person" data-code="B_01.02.0050" data-name="Hierarchy of the entity within the group"></span><span class="sq sq--person" style="--i:11" data-t="B_01.02" data-who="person" data-code="B_01.02.0060" data-name="LEI of the direct parent undertaking"></span><span class="sq sq--person" style="--i:13" data-t="B_01.02" data-who="person" data-code="B_01.02.0080" data-name="Date of integration in the register of information"></span><span class="sq sq--person" style="--i:15" data-t="B_01.02" data-who="person" data-code="B_01.02.0100" data-name="Currency"></span><span class="sq sq--person" style="--i:16" data-t="B_01.02" data-who="person" data-code="B_01.02.0110" data-name="Value of total assets"></span><span class="sq sq--person" style="--i:17" data-t="B_01.03" data-who="person" data-code="B_01.03.0010" data-name="Identification code of the branch"></span><span class="sq sq--person" style="--i:18" data-t="B_01.03" data-who="person" data-code="B_01.03.0020" data-name="LEI of the head office of the branch"></span><span class="sq sq--person" style="--i:19" data-t="B_01.03" data-who="person" data-code="B_01.03.0030" data-name="Name of the branch"></span><span class="sq sq--person" style="--i:20" data-t="B_01.03" data-who="person" data-code="B_01.03.0040" data-name="Country of the branch"></span><span class="sq sq--person" style="--i:21" data-t="B_02.01" data-who="person" data-code="B_02.01.0010" data-name="Contractual arrangement reference number"></span><span class="sq sq--person" style="--i:22" data-t="B_02.01" data-who="person" data-code="B_02.01.0020" data-name="Type of contractual arrangement"></span><span class="sq sq--person" style="--i:23" data-t="B_02.01" data-who="person" data-code="B_02.01.0030" data-name="Overarching contractual arrangement reference number"></span><span class="sq sq--person" style="--i:30" data-t="B_02.02" data-who="person" data-code="B_02.02.0050" data-name="Function identifier"></span><span class="sq sq--person" style="--i:31" data-t="B_02.02" data-who="person" data-code="B_02.02.0060" data-name="Type of ICT services"></span><span class="sq sq--person" style="--i:32" data-t="B_02.02" data-who="person" data-code="B_02.02.0070" data-name="Start date of the contractual arrangement"></span><span class="sq sq--person" style="--i:34" data-t="B_02.02" data-who="person" data-code="B_02.02.0090" data-name="Reason of the termination or ending of the contractual arrangement"></span><span class="sq sq--person" style="--i:35" data-t="B_02.02" data-who="person" data-code="B_02.02.0100" data-name="Notice period for the entity making use of the ICT service(s)"></span><span class="sq sq--person" style="--i:36" data-t="B_02.02" data-who="person" data-code="B_02.02.0110" data-name="Notice period for the ICT third-party service provider"></span><span class="sq sq--person" style="--i:37" data-t="B_02.02" data-who="person" data-code="B_02.02.0120" data-name="Country of the governing law of the contractual arrangement"></span><span class="sq sq--person" style="--i:44" data-t="B_02.03" data-who="person" data-code="B_02.03.0010" data-name="Contractual arrangement reference number"></span><span class="sq sq--person" style="--i:45" data-t="B_02.03" data-who="person" data-code="B_02.03.0020" data-name="Contractual arrangement reference number linked to B_02.03.0010"></span><span class="sq sq--person" style="--i:53" data-t="B_03.03" data-who="person" data-code="B_03.03.0010" data-name="Contractual arrangement reference number"></span><span class="sq sq--person" style="--i:54" data-t="B_03.03" data-who="person" data-code="B_03.03.0020" data-name="LEI of the entity providing ICT services"></span><span class="sq sq--person" style="--i:59" data-t="B_04.01" data-who="person" data-code="B_04.01.0040" data-name="Identification code of the branch"></span><span class="sq sq--person" style="--i:62" data-t="B_05.01" data-who="person" data-code="B_05.01.0030" data-name="Additional identification code of the ICT third-party service provider"></span><span class="sq sq--person" style="--i:63" data-t="B_05.01" data-who="person" data-code="B_05.01.0040" data-name="Type of the additional identification code"></span><span class="sq sq--person" style="--i:64" data-t="B_05.01" data-who="person" data-code="B_05.01.0050" data-name="Legal name of the ICT third-party service provider"></span><span class="sq sq--person" style="--i:66" data-t="B_05.01" data-who="person" data-code="B_05.01.0070" data-name="Type of person of the ICT third-party service provider"></span><span class="sq sq--person" style="--i:77" data-t="B_05.02" data-who="person" data-code="B_05.02.0060" data-name="Identification code of the recipient of sub-contracted ICT services"></span><span class="sq sq--person" style="--i:79" data-t="B_06.01" data-who="person" data-code="B_06.01.0010" data-name="Function identifier"></span><span class="sq sq--person" style="--i:81" data-t="B_06.01" data-who="person" data-code="B_06.01.0030" data-name="Function name"></span><span class="sq sq--person" style="--i:83" data-t="B_06.01" data-who="person" data-code="B_06.01.0050" data-name="Criticality or importance assessment"></span><span class="sq sq--person" style="--i:84" data-t="B_06.01" data-who="person" data-code="B_06.01.0060" data-name="Reasons for criticality or importance"></span><span class="sq sq--person" style="--i:85" data-t="B_06.01" data-who="person" data-code="B_06.01.0070" data-name="Date of the last assessment of criticality or importance"></span><span class="sq sq--person" style="--i:86" data-t="B_06.01" data-who="person" data-code="B_06.01.0080" data-name="Recovery time objective of the function (hours)"></span><span class="sq sq--person" style="--i:87" data-t="B_06.01" data-who="person" data-code="B_06.01.0090" data-name="Recovery point objective of the function (hours)"></span><span class="sq sq--person" style="--i:88" data-t="B_06.01" data-who="person" data-code="B_06.01.0100" data-name="Impact of discontinuing the function"></span><span class="sq sq--person" style="--i:94" data-t="B_07.01" data-who="person" data-code="B_07.01.0060" data-name="Reason where the provider is not or hardly substitutable"></span><span class="sq sq--person" style="--i:95" data-t="B_07.01" data-who="person" data-code="B_07.01.0070" data-name="Date of the last audit on the ICT third-party service provider"></span><span class="sq sq--person" style="--i:96" data-t="B_07.01" data-who="person" data-code="B_07.01.0080" data-name="Existence of an exit plan"></span><span class="sq sq--person" style="--i:97" data-t="B_07.01" data-who="person" data-code="B_07.01.0090" data-name="Possibility of reintegration of the contracted ICT service"></span><span class="sq sq--person" style="--i:98" data-t="B_07.01" data-who="person" data-code="B_07.01.0100" data-name="Impact of discontinuing the ICT services"></span><span class="sq sq--person" style="--i:99" data-t="B_07.01" data-who="person" data-code="B_07.01.0110" data-name="Are there alternative ICT third-party service providers identified?"></span><span class="sq sq--person" style="--i:100" data-t="B_07.01" data-who="person" data-code="B_07.01.0120" data-name="Identification of alternative ICT third-party service providers"></span><span class="sq sq--person" style="--i:104" data-t="B_99.01" data-who="person" data-code="B_99.01.C0040" data-name="Description or internal definition of the option"></span></div>
+        </div>
+        <div class="grp grp--t" data-group="B_01.01">
+          <p class="grp__l"><code>B_01.01</code><span>Entity maintaining the register of information</span></p>
+          <div class="grp__s"></div>
+        </div>
+        <div class="grp grp--t" data-group="B_01.02">
+          <p class="grp__l"><code>B_01.02</code><span>List of entities within the scope of the register of information</span></p>
+          <div class="grp__s"></div>
+        </div>
+        <div class="grp grp--t" data-group="B_01.03">
+          <p class="grp__l"><code>B_01.03</code><span>List of branches</span></p>
+          <div class="grp__s"></div>
+        </div>
+        <div class="grp grp--t" data-group="B_02.01">
+          <p class="grp__l"><code>B_02.01</code><span>Contractual arrangements: general information</span></p>
+          <div class="grp__s"></div>
+        </div>
+        <div class="grp grp--t" data-group="B_02.02">
+          <p class="grp__l"><code>B_02.02</code><span>Contractual arrangements: specific information</span></p>
+          <div class="grp__s"></div>
+        </div>
+        <div class="grp grp--t" data-group="B_02.03">
+          <p class="grp__l"><code>B_02.03</code><span>List of intra-group contractual arrangements</span></p>
+          <div class="grp__s"></div>
+        </div>
+        <div class="grp grp--t" data-group="B_03.01">
+          <p class="grp__l"><code>B_03.01</code><span>Entities signing the contractual arrangements for receiving ICT service(s)</span></p>
+          <div class="grp__s"></div>
+        </div>
+        <div class="grp grp--t" data-group="B_03.02">
+          <p class="grp__l"><code>B_03.02</code><span>ICT third-party service providers signing the contractual arrangements</span></p>
+          <div class="grp__s"></div>
+        </div>
+        <div class="grp grp--t" data-group="B_03.03">
+          <p class="grp__l"><code>B_03.03</code><span>Entities signing the contractual arrangements for providing ICT service(s)</span></p>
+          <div class="grp__s"></div>
+        </div>
+        <div class="grp grp--t" data-group="B_04.01">
+          <p class="grp__l"><code>B_04.01</code><span>Entities making use of the ICT services</span></p>
+          <div class="grp__s"></div>
+        </div>
+        <div class="grp grp--t" data-group="B_05.01">
+          <p class="grp__l"><code>B_05.01</code><span>ICT third-party service providers</span></p>
+          <div class="grp__s"></div>
+        </div>
+        <div class="grp grp--t" data-group="B_05.02">
+          <p class="grp__l"><code>B_05.02</code><span>ICT service supply chains</span></p>
+          <div class="grp__s"></div>
+        </div>
+        <div class="grp grp--t" data-group="B_06.01">
+          <p class="grp__l"><code>B_06.01</code><span>Functions identification</span></p>
+          <div class="grp__s"></div>
+        </div>
+        <div class="grp grp--t" data-group="B_07.01">
+          <p class="grp__l"><code>B_07.01</code><span>Assessment of the ICT services</span></p>
+          <div class="grp__s"></div>
+        </div>
+        <div class="grp grp--t" data-group="B_99.01">
+          <p class="grp__l"><code>B_99.01</code><span>Definitions from entities making use of the ICT services</span></p>
+          <div class="grp__s"></div>
+        </div>
+      </div>
+      <p class="caveat">Each column is counted once, by where its value normally starts for a single firm with a tagged cloud. These are columns, not effort: a notice period can take longer to find than twenty copied IDs. The scan can only fill services a person has already registered.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="does" aria-labelledby="does-h">
+    <div class="wrap">
+      <div class="sec__h"><h2 class="sec-h" id="does-h">What it does by itself</h2><p>The work that is factual, repetitive or checkable.</p></div>
+      <ul class="does">
+        <li class="rv"><h3>Reads your cloud</h3><p>Resources, regions, replicas, cost, backups and security alerts where Azure and AWS expose them, plus SaaS apps from Entra ID and Okta. Access is read-only.</p></li>
+        <li class="rv"><h3>Links resources to services</h3><p>Through resource IDs on a service, or matching contract, function and service-type values. It does not guess a link.</p></li>
+        <li class="rv"><h3>Fills facts and repeats</h3><p>It puts scanned facts in the register’s templates, copies what you typed once into every template that needs it, and works out totals and defaults.</p></li>
+        <li class="rv"><h3>Checks changes before deploy</h3><p>Five rules read a Terraform plan. A High finding fails the pipeline. No AI takes part.</p></li>
+        <li class="rv"><h3>Points out gaps and risks</h3><p>Empty required cells, broken references and conflicting rows are errors. Weak backups, concentration and unknown vendors are warnings for a person to assess.</p></li>
+        <li class="rv"><h3>Builds the files</h3><p>All 15 templates as an EBA xBRL-CSV package, and a PDF for people. While errors remain, the package can only be a marked draft.</p></li>
+      </ul>
+      <div class="never rv">
+        <h3>What it never does</h3>
+        <ul>
+          <li>Create a provider, contract, service or function from a scan</li>
+          <li>Read your contracts</li>
+          <li>Find subcontractors</li>
+          <li>Decide that a function is critical or a risk is acceptable</li>
+          <li>Create or change cloud resources</li>
+          <li>Submit to your authority</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="you" aria-labelledby="you-h">
+    <div class="wrap">
+      <div class="sec__h"><h2 class="sec-h" id="you-h">What you still enter</h2><p>50 columns, in the order you’ll need them, with the team that usually has the answer. The 8 suggested columns also need a person to accept them, or to type them when there is no suggestion.</p></div>
+      <ol class="steps" id="steps">
+        <li class="step rv">
+          <div class="step__h"><h3>Before the first scan</h3><p>Register admin</p></div>
+          <div class="step__b">
+            <p>Create the register itself: entity, providers, contracts, services and functions. Tag cloud resources with <code>dora-function</code> and <code>dora-contract</code> so the scan has something to attach to.</p>
+            <details class="more"><summary>11 columns</summary><ul class="clist"><li><code>B_01.01.0010</code><span>LEI of the entity maintaining the register<small>Required in every row</small></span></li><li><code>B_01.01.0020</code><span>Name of the entity<small>Required in every row</small></span></li><li><code>B_01.01.0030</code><span>Country of the entity<small>Required in every row</small></span></li><li><code>B_02.01.0010</code><span>Contractual arrangement reference number<small>Required in every row</small></span></li><li><code>B_02.02.0050</code><span>Function identifier<small>Required in every row</small></span></li><li><code>B_02.02.0060</code><span>Type of ICT services<small>Required in every row</small></span></li><li><code>B_02.02.0070</code><span>Start date of the contractual arrangement<small>Required in every row</small></span></li><li><code>B_05.01.0050</code><span>Legal name of the ICT third-party service provider<small>Required in every row</small></span></li><li><code>B_06.01.0010</code><span>Function identifier<small>Required in every row</small></span></li><li><code>B_06.01.0030</code><span>Function name<small>Required in every row</small></span></li><li><code>B_06.01.0050</code><span>Criticality or importance assessment<small>Required in every row</small></span></li></ul></details>
+          </div>
+        </li>
+        <li class="step rv">
+          <div class="step__h"><h3>From the contracts</h3><p>Legal and procurement</p></div>
+          <div class="step__b">
+            <p>Arrangement type, notice periods, governing law, termination reasons and how each provider is legally identified. Add every subcontractor from the providers’ subprocessor lists, and the cost of contracts outside the scanned clouds.</p>
+            <details class="more"><summary>10 columns</summary><ul class="clist"><li><code>B_02.01.0020</code><span>Type of contractual arrangement<small>Required in every row</small></span></li><li><code>B_02.01.0030</code><span>Overarching contractual arrangement reference number<small>If a subsequent arrangement</small></span></li><li><code>B_02.02.0090</code><span>Reason of the termination or ending of the contractual arrangement<small>If terminated</small></span></li><li><code>B_02.02.0100</code><span>Notice period for the entity making use of the ICT service(s)<small>If it supports a critical function</small></span></li><li><code>B_02.02.0110</code><span>Notice period for the ICT third-party service provider<small>If it supports a critical function</small></span></li><li><code>B_02.02.0120</code><span>Country of the governing law of the contractual arrangement<small>If it supports a critical function</small></span></li><li><code>B_05.01.0030</code><span>Additional identification code of the ICT third-party service provider<small>Optional</small></span></li><li><code>B_05.01.0040</code><span>Type of the additional identification code<small>If a second code is given</small></span></li><li><code>B_05.01.0070</code><span>Type of person of the ICT third-party service provider<small>Required in every row</small></span></li><li><code>B_05.02.0060</code><span>Identification code of the recipient of sub-contracted ICT services<small>For rank 2 and below in the chain</small></span></li></ul></details>
+          </div>
+        </li>
+        <li class="step rv">
+          <div class="step__h"><h3>From the firm’s own records</h3><p>Finance and regulatory reporting</p></div>
+          <div class="step__b">
+            <p>Facts about the legal entity: its type, competent authority, place in the group, parent and total assets. Replace cost estimates with invoiced amounts before filing.</p>
+            <details class="more"><summary>7 columns</summary><ul class="clist"><li><code>B_01.01.0040</code><span>Type of entity<small>Required in every row</small></span></li><li><code>B_01.01.0050</code><span>Competent authority<small>Required when reporting</small></span></li><li><code>B_01.02.0050</code><span>Hierarchy of the entity within the group<small>Required in every row</small></span></li><li><code>B_01.02.0060</code><span>LEI of the direct parent undertaking<small>Required in every row</small></span></li><li><code>B_01.02.0080</code><span>Date of integration in the register of information<small>Required in every row</small></span></li><li><code>B_01.02.0100</code><span>Currency<small>If total assets are reported</small></span></li><li><code>B_01.02.0110</code><span>Value of total assets<small>If a financial entity</small></span></li></ul></details>
+          </div>
+        </li>
+        <li class="step rv">
+          <div class="step__h"><h3>From the business impact analysis</h3><p>Business continuity</p></div>
+          <div class="step__b">
+            <p>Why each function is critical, when that was last assessed, how long it can be down, how much data it can lose and what stopping it would mean.</p>
+            <details class="more"><summary>5 columns</summary><ul class="clist"><li><code>B_06.01.0060</code><span>Reasons for criticality or importance<small>Optional</small></span></li><li><code>B_06.01.0070</code><span>Date of the last assessment of criticality or importance<small>Required in every row</small></span></li><li><code>B_06.01.0080</code><span>Recovery time objective of the function (hours)<small>Required in every row</small></span></li><li><code>B_06.01.0090</code><span>Recovery point objective of the function (hours)<small>Required in every row</small></span></li><li><code>B_06.01.0100</code><span>Impact of discontinuing the function<small>Required in every row</small></span></li></ul></details>
+          </div>
+        </li>
+        <li class="step rv">
+          <div class="step__h"><h3>From the provider assessment</h3><p>Third-party risk</p></div>
+          <div class="step__b">
+            <p>For each service behind a critical function: audit date, exit plan, reintegration, impact and real alternatives.</p>
+            <details class="more"><summary>7 columns</summary><ul class="clist"><li><code>B_07.01.0060</code><span>Reason where the provider is not or hardly substitutable<small>If hard to substitute</small></span></li><li><code>B_07.01.0070</code><span>Date of the last audit on the ICT third-party service provider<small>Required in every row</small></span></li><li><code>B_07.01.0080</code><span>Existence of an exit plan<small>Required in every row</small></span></li><li><code>B_07.01.0090</code><span>Possibility of reintegration of the contracted ICT service<small>Required in every row</small></span></li><li><code>B_07.01.0100</code><span>Impact of discontinuing the ICT services<small>Required in every row</small></span></li><li><code>B_07.01.0110</code><span>Are there alternative ICT third-party service providers identified?<small>Required in every row</small></span></li><li><code>B_07.01.0120</code><span>Identification of alternative ICT third-party service providers<small>Optional</small></span></li></ul></details>
+          </div>
+        </li>
+        <li class="step rv">
+          <div class="step__h"><h3>Only with branches or a group</h3><p>Group reporting</p></div>
+          <div class="step__b">
+            <p>Branches, intra-group contracts and the entities that provide services inside the group. A single entity with no branches leaves these empty.</p>
+            <details class="more"><summary>9 columns</summary><ul class="clist"><li><code>B_01.03.0010</code><span>Identification code of the branch<small>Required in every row</small></span></li><li><code>B_01.03.0020</code><span>LEI of the head office of the branch<small>Required in every row</small></span></li><li><code>B_01.03.0030</code><span>Name of the branch<small>Required in every row</small></span></li><li><code>B_01.03.0040</code><span>Country of the branch<small>Required in every row</small></span></li><li><code>B_02.03.0010</code><span>Contractual arrangement reference number<small>Required in every row</small></span></li><li><code>B_02.03.0020</code><span>Contractual arrangement reference number linked to B_02.03.0010<small>Required in every row</small></span></li><li><code>B_03.03.0010</code><span>Contractual arrangement reference number<small>Required in every row</small></span></li><li><code>B_03.03.0020</code><span>LEI of the entity providing ICT services<small>Required in every row</small></span></li><li><code>B_04.01.0040</code><span>Identification code of the branch<small>If the user is a branch</small></span></li></ul></details>
+          </div>
+        </li>
+        <li class="step rv">
+          <div class="step__h"><h3>Before the final package</h3><p>Policy owner</p></div>
+          <div class="step__b">
+            <p>Write what each option, such as “high” or “highly complex”, means in your firm. Until then DORAi uses the regulation’s labels and shows a warning.</p>
+            <details class="more"><summary>1 column</summary><ul class="clist"><li><code>B_99.01.C0040</code><span>Description or internal definition of the option<small>Required in every row</small></span></li></ul></details>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec" id="tradeoffs" aria-labelledby="trade-h">
+    <div class="wrap">
+      <div class="sec__h"><h2 class="sec-h" id="trade-h">The tradeoffs</h2><p>Each shortcut saves work and costs something.</p></div>
+      <table class="trade">
+        <thead><tr><th scope="col">Choice</th><th scope="col">You get</th><th scope="col">You give up</th><th scope="col">What to do</th></tr></thead>
+        <tbody>
+          <tr class="rv"><th scope="row">Rules make the findings, not AI</th><td data-l="You get">The same input gives the same answer, and you can read why.</td><td data-l="You give up">It sees only what five rules cover. An untagged resource can’t trigger the critical-function rule, and deleting one raises no finding.</td><td data-l="What to do">Review deletions and untagged resources yourself.</td></tr>
+          <tr class="rv"><th scope="row">Tags link cloud to register</th><td data-l="You get">Links are explicit, with no guessing.</td><td data-l="You give up">Tag-only linking also needs a known service type. In the demo it finds €21,200 of the €40,000 yearly cost on contract C1.</td><td data-l="What to do">Tag everything and list resource IDs for types outside the built-in table.</td></tr>
+          <tr class="rv"><th scope="row">Cost is estimated from bills</th><td data-l="You get">A figure without collecting invoices.</td><td data-l="You give up">It is not the past year’s expense. With steady spend, AWS’s 14-day window gives 23–46% of the true figure, and Azure about 92%. A failed cost call leaves a gap.</td><td data-l="What to do">Use invoiced amounts before filing.</td></tr>
+          <tr class="rv"><th scope="row">Location follows resources</th><td data-l="You get">Countries come from evidence, and an unknown region is never assumed to be in the EU.</td><td data-l="You give up">It misses remote support and administration, and “country of provision” is just the most common one.</td><td data-l="What to do">Compare with the contract and data processing agreement.</td></tr>
+          <tr class="rv"><th scope="row">A typed value can override the scan</th><td data-l="You get">A correction survives the next scan.</td><td data-l="You give up">An old typed storage location can hide a real move.</td><td data-l="What to do">Compare typed locations with the inventory after each scan.</td></tr>
+          <tr class="rv"><th scope="row">Defaults assume one entity</th><td data-l="You get">Much less repeated typing.</td><td data-l="You give up">Groups get the wrong user entity until someone sets it. A forgotten end date looks like an open-ended contract.</td><td data-l="What to do">Review defaults, especially for groups.</td></tr>
+          <tr class="rv"><th scope="row">AI drafts and a person decides</th><td data-l="You get">A faster first answer, with a reason and a source.</td><td data-l="You give up">A valid citation can still fail to support the value, and the model rates its own confidence.</td><td data-l="What to do">Read the passage before accepting. The decision is yours.</td></tr>
+          <tr class="rv"><th scope="row">AI is optional</th><td data-l="You get">The server runs with no key and no network.</td><td data-l="You give up">The default is a keyword-based stand-in. A real model receives names, tags and the facts behind each question.</td><td data-l="What to do">Choose the provider deliberately and check what may be sent to it.</td></tr>
+          <tr class="rv"><th scope="row">Templates are built when you ask</th><td data-l="You get">They follow the latest scan with no sync job.</td><td data-l="You give up">The same register can give different figures after the next scan.</td><td data-l="What to do">Archive every package you file.</td></tr>
+          <tr class="rv"><th scope="row">The CI check works offline</th><td data-l="You get">It needs no server or login in the pipeline.</td><td data-l="You give up">It trusts a copy of the register, which can go stale.</td><td data-l="What to do">Refresh that copy whenever the register changes.</td></tr>
+          <tr class="rv"><th scope="row">Risk warnings don’t block export</th><td data-l="You get">An incomplete view of backups or vendors can’t stop a filing.</td><td data-l="You give up">A package can be final with serious warnings open.</td><td data-l="What to do">Record a decision on every warning.</td></tr>
+          <tr class="rv"><th scope="row">Your firm hosts it</th><td data-l="You get">The register and cloud credentials stay on your infrastructure.</td><td data-l="You give up">You run updates, off-site backups and availability. There is one server per install.</td><td data-l="What to do">Give the server an owner.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="sec" id="by-hand" aria-labelledby="hand-h">
+    <div class="wrap">
+      <div class="sec__h"><h2 class="sec-h" id="hand-h">Check by hand before filing</h2><p>Current gaps in version 1.1.1, found by testing or reading the code on 22 November 2026.</p></div>
+      <ol class="hand">
+        <li class="rv"><h3>“Ready” does not mean complete</h3><div><p>Readiness checks the rows that exist. With a scanned cloud and no providers, contracts or functions, the final package is still produced.</p><p class="do">Compare the register with your contract list and the inventory.</p></div></li>
+        <li class="rv"><h3>Some invalid values reach the final package</h3><div><p>An LEI with a bad checksum and an end date before the start date are caught by basic validation, but that validation does not block the export.</p><p class="do">Clear basic validation as well as readiness.</p></div></li>
+        <li class="rv"><h3>Two kinds of accepted suggestion stay out of the register</h3><div><p>Accepting a service type or a business function records the decision only. The four judgement columns and GLEIF values are written to their cells.</p><p class="do">Enter the type or function on the service, or fix the tag.</p></div></li>
+        <li class="rv"><h3>Pending suggestions don’t raise a warning</h3><div><p>They wait on the review screen. An affected cell shows as missing if it is required.</p><p class="do">Empty the review queue before export.</p></div></li>
+        <li class="rv"><h3>A blank parent becomes “its own parent”</h3><div><p>Readiness never asks for the ultimate parent. The export fills a blank with the provider’s own code.</p><p class="do">Confirm the parent of every provider.</p></div></li>
+        <li class="rv"><h3>Provider totals can mix currencies</h3><div><p>In testing, a €40,000 and a $1,000 contract were totalled as €41,000.</p><p class="do">Enter every contract of a provider in one currency.</p></div></li>
+        <li class="rv"><h3>Some cell edits have no effect</h3><div><p>A legal name or contract cost set on the template cell, including a legal name accepted from GLEIF, loses to the value on the provider or contract.</p><p class="do">Edit the provider or contract itself.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec" id="columns" aria-labelledby="cols-h">
+    <div class="wrap">
+      <div class="sec__h"><h2 class="sec-h" id="cols-h">Every column</h2><p>Open a template, or filter by who fills it.</p></div>
+      <div class="filters" role="group" aria-label="Filter columns"><button type="button" data-f="all" aria-pressed="true">All 105</button><button type="button" data-f="scan" aria-pressed="false"><i class="sw sw--scan" aria-hidden="true"></i>From the cloud scan <b>6</b></button><button type="button" data-f="rule" aria-pressed="false"><i class="sw sw--rule" aria-hidden="true"></i>Filled by rules <b>41</b></button><button type="button" data-f="ai" aria-pressed="false"><i class="sw sw--ai" aria-hidden="true"></i>Drafted by AI <b>4</b></button><button type="button" data-f="lookup" aria-pressed="false"><i class="sw sw--lookup" aria-hidden="true"></i>Looked up in GLEIF <b>4</b></button><button type="button" data-f="person" aria-pressed="false"><i class="sw sw--person" aria-hidden="true"></i>Entered by you <b>50</b></button></div>
+      <details class="tpl">
+        <summary><code>B_01.01</code><span>Entity maintaining the register of information</span><em aria-hidden="true"><i class="sw sw--person" aria-hidden="true"></i><i class="sw sw--person" aria-hidden="true"></i><i class="sw sw--person" aria-hidden="true"></i><i class="sw sw--person" aria-hidden="true"></i><i class="sw sw--person" aria-hidden="true"></i><i class="sw sw--rule" aria-hidden="true"></i></em></summary>
+        <table class="ctable"><thead><tr><th>Column</th><th>What it holds</th><th>Who fills it</th><th>When it is needed</th></tr></thead>
+          <tbody>
+            <tr data-who="person" data-code="B_01.01.0010"><td><code>B_01.01.0010</code></td><td>LEI of the entity maintaining the register</td><td><span class="who"><i class="sw sw--person" aria-hidden="true"></i>Entered by you</span></td><td>Required in every row</td></tr>
+<tr data-who="person" data-code="B_01.01.0020"><td><code>B_01.01.0020</code></td><td>Name of the entity</td><td><span class="who"><i class="sw sw--person" aria-hidden="true"></i>Entered by you</span></td><td>Required in every row</td></tr>
+<tr data-who="person" data-code="B_01.01.0030"><td><code>B_01.01.0030</code></td><td>Country of the entity</td><td><span class="who"><i class="sw sw--person" aria-hidden="true"></i>Entered by you</span></td><td>Required in every row</td></tr>
+<tr data-who="person" data-code="B_01.01.0040"><td><code>B_01.01.0040</code></td><td>Type of entity</td><td><span class="who"><i class="sw sw--person" aria-hidden="true"></i>Entered by you</span></td><td>Required in every row</td></tr>
+<tr data-who="person" data-code="B_01.01.0050"><td><code>B_01.01.0050</code></td><td>Competent authority</td><td><span class="who"><i class="sw sw--person" aria-hidden="true"></i>Entered by you</span></td><td>Required when reporting</td></tr>
+<tr data-who="rule" data-code="B_01.01.0060"><td><code>B_01.01.0060</code></td><td>Date of the reporting<small>The export’s reference date.</small></td><td><span class="who"><i class="sw sw--rule" aria-hidden="true"></i>Filled by rules</span></td><td>Required when reporting</td></tr>
+          </tbody></table>
+      </details>
+      <details class="tpl">
+        <summary><code>B_01.02</code><span>List of entities within the scope of the register of information</span><em aria-hidden="true"><i class="sw sw--rule" aria-hidden="true"></i><i class="sw sw--rule" aria-hidden="true"></i><i class="sw sw--rule" aria-hidden="true"></i><i class="sw sw--rule" aria-hidden="true"></i><i class="sw sw--person" aria-hidden="true"></i><i class="sw sw--person" aria-hidden="true"></i><i class="sw sw--rule" aria-hidden="true"></i><i class="sw sw--person" aria-hidden="true"></i><i class="sw sw--rule" aria-hidden="true"></i><i class="sw sw--person" aria-hidden="true"></i><i class="sw sw--person" aria-hidden="true"></i></em></summary>
+        <table class="ctable"><thead><tr><th>Column</th><th>What it holds</th><th>Who fills it</th><th>When it is needed</th></tr></thead>
+          <tbody>
+            <tr data-who="rule" data-code="B_01.02.0010"><td><code>B_01.02.0010</code></td><td>LEI of the entity</td><td><span class="who"><i class="sw sw--rule" aria-hidden="true"></i>Filled by rules</span></td><td>Required in every row</td></tr>
+<tr data-who="rule" data-code="B_01.02.0020"><td><code>B_01.02.0020</code></td><td>Name of the entity</td><td><span class="who"><i class="sw sw--rule" aria-hidden="true"></i>Filled by rules</span></td><td>Required in every row</td></tr>
+<tr data-who="rule" data-code="B_01.02.0030"><td><code>B_01.02.0030</code></td><td>Country of the entity</td><td><span class="who"><i class="sw sw--rule" aria-hidden="true"></i>Filled by rules</span></td><td>Required in every row</td></tr>
+<tr data-who="rule" data-code="B_01.02.0040"><td><code>B_01.02.0040</code></td><td>Type of entity</td><td><span class="who"><i class="sw sw--rule" aria-hidden="true"></i>Filled by rules</span></td><td>Required in every row</td></tr>
+<tr data-who="person" data-code="B_01.02.0050"><td><code>B_01.02.0050</code></td><td>Hierarchy of the entity within the group</td><td><span class="who"><i class="sw sw--person" aria-hidden="true"></i>Entered by you</span></td><td>Required in every row</td></tr>
+<tr data-who="person" data-code="B_01.02.0060"><td><code>B_01.02.0060</code></td><td>LEI of the direct parent undertaking</td><td><span class="who"><i class="sw sw--person" aria-hidden="true"></i>Entered by you</span></td><td>Required in every row</td></tr>
+<tr data-who="rule" data-code="B_01.02.0070"><td><code>B_01.02.0070</code></td><td>Date of last update<small>Newest edit timestamp in the register.</small></td><td><span class="who"><i class="sw sw--rule" aria-hidden="true"></i>Filled by rules</span></td><td>Required in every row</td></tr>
+<tr data-who="person" data-code="B_01.02.0080"><td><code>B_01.02.0080</code></td><td>Date of integration in the register of information</td><td><span class="who"><i class="sw sw--person" aria-hidden="true"></i>Entered by you</span></td><td>Required in every row</td></tr>
+<tr data-who="rule" data-code="B_01.02.0090"><td><code>B_01.02.0090</code></td><td>Date of deletion in the register of information<small>9999-12-31, meaning still in scope.</small></td><td><span class="who"><i class="sw sw--rule" aria-hidden="true"></i>Filled by rules</span></td><td>Required in every row</td></tr>
+<tr data-who="person" data-code="B_01.02.0100"><td><code>B_01.02.0100</code></td><td>Currency</td><td><span class="who"><i class="sw sw--person" aria-hidden="true"></i>Entered by you</span></td><td>If total assets are reported</td></tr>
+<tr data-who="person" data-code="B_01.02.0110"><td><code>B_01.02.0110</code></td><td>Value of total assets</td><td><span class="who"><i class="sw sw--person" aria-hidden="true"></i>Entered by you</span></td><td>If a financial entity</td></tr>
+          </tbody></table>
+      </details>
+      <details class="tpl">
+        <summary><code>B_01.03</code><span>List of branches</span><em aria-hidden="true"><i class="sw sw--person" aria-hidden="true"></i><i class="sw sw--person" aria-hidden="true"></i><i class="sw sw--person" aria-hidden="true"></i><i class="sw sw--person" aria-hidden="true"></i></em></summary>
+        <table class="ctable"><thead><tr><th>Column</th><th>What it holds</th><th>Who fills it</th><th>When it is needed</th></tr></thead>
+          <tbody>
+            <tr data-who="person" data-code="B_01.03.0010"><td><code>B_01.03.0010</code></td><td>Identification code of the branch</td><td><span class="who"><i class="sw sw--person" aria-hidden="true"></i>Entered by you</span></td><td>Required in every row</td></tr>
+<tr data-who="person" data-code="B_01.03.0020"><td><code>B_01.03.0020</code></td><td>LEI of the head office of the branch</td><td><span class="who"><i class="sw sw--person" aria-hidden="true"></i>Entered by you</span></td><td>Required in every row</td></tr>
+<tr data-who="person" data-code="B_01.03.0030"><td><code>B_01.03.0030</code></td><td>Name of the branch</td><td><span class="who"><i class="sw sw--person" aria-hidden="true"></i>Entered by you</span></td><td>Required in every row</td></tr>
+<tr data-who="person" data-code="B_01.03.0040"><td><code>B_01.03.0040</code></td><td>Country of the branch</td><td><span class="who"><i class="sw sw--person" aria-hidden="true"></i>Entered by you</span></td><td>Required in every row</td></tr>
+          </tbody></table>
+      </details>
+      <details class="tpl">
+        <summary><code>B_02.01</code><span>Contractual arrangements: general information</span><em aria-hidden="true"><i class="sw sw--person" aria-hidden="true"></i><i class="sw sw--person" aria-hidden="true"></i><i class="sw sw--person" aria-hidden="true"></i><i class="sw sw--scan" aria-hidden="true"></i><i class="sw sw--scan" aria-hidden="true"></i></em></summary>
+        <table class="ctable"><thead><tr><th>Column</th><th>What it holds</th><th>Who fills it</th><th>When it is needed</th></tr></thead>
+          <tbody>
+            <tr data-who="person" data-code="B_02.01.0010"><td><code>B_02.01.0010</code></td><td>Contractual arrangement reference number</td><td><span class="who"><i class="sw sw--person" aria-hidden="true"></i>Entered by you</span></td><td>Required in every row</td></tr>
+<tr data-who="person" data-code="B_02.01.0020"><td><code>B_02.01.0020</code></td><td>Type of contractual arrangement</td><td><span class="who"><i class="sw sw--person" aria-hidden="true"></i>Entered by you</span></td><td>Required in every row</td></tr>
+<tr data-who="person" data-code="B_02.01.0030"><td><code>B_02.01.0030</code></td><td>Overarching contractual arrangement reference number</td><td><span class="who"><i class="sw sw--person" aria-hidden="true"></i>Entered by you</span></td><td>If a subsequent arrangement</td></tr>
+<tr data-who="scan" data-code="B_02.01.0040"><td><code>B_02.01.0040</code></td><td>Currency of the amount reported in B_02.01.0050<small>The contract’s currency if you typed one, otherwise the scan’s.</small></td><td><span class="who"><i class="sw sw--scan" aria-hidden="true"></i>From the cloud scan</span></td><td>Required in every row</td></tr>
+<tr data-who="scan" data-code="B_02.01.0050"><td><code>B_02.01.0050</code></td><td>Annual expense or estimated cost of the contractual arrangement for the past year<small>Average monthly cost × 12. A cost typed on the contract wins.</small></td><td><span class="who"><i class="sw sw--scan" aria-hidden="true"></i>From the cloud scan</span></td><td>Required in every row</td></tr>
+          </tbody></table>
+      </details>
+      <details class="tpl">
+        <summary><code>B_02.02</code><span>Contractual arrangements: specific information</span><em aria-hidden="true"><i class="sw sw--rule" aria-hidden="true"></i><i class="sw sw--rule" aria-hidden="true"></i><i class="sw sw--rule" aria-hidden="true"></i><i class="sw sw--rule" aria-hidden="true"></i><i class="sw sw--person" aria-hidden="true"></i><i class="sw sw--person" aria-hidden="true"></i><i class="sw sw--person" aria-hidden="true"></i><i class="sw sw--rule" aria-hidden="true"></i><i class="sw sw--person" aria-hidden="true"></i><i class="sw sw--person" aria-hidden="true"></i><i class="sw sw--person" aria-hidden="true"></i><i class="sw sw--person" aria-hidden="true"></i><i class="sw sw--scan" aria-hidden="true"></i><i class="sw sw--scan" aria-hidden="true"></i><i class="sw sw--scan" aria-hidden="true"></i><i class="sw sw--scan" aria-hidden="true"></i><i class="sw sw--ai" aria-hidden="true"></i><i class="sw sw--ai" aria-hidden="true"></i></em></summary>
+        <table class="ctable"><thead><tr><th>Column</th><th>What it holds</th><th>Who fills it</th><th>When it is needed</th></tr></thead>
+          <tbody>
+            <tr data-who="rule" data-code="B_02.02.0010"><td><code>B_02.02.0010</code></td><td>Contractual arrangement reference number</td><td><span class="who"><i class="sw sw--rule" aria-hidden="true"></i>Filled by rules</span></td><td>Required in every row</td></tr>
+<tr data-who="rule" data-code="B_02.02.0020"><td><code>B_02.02.0020</code></td><td>LEI of the entity making use of the ICT service(s)</td><td><span class="who"><i class="sw sw--rule" aria-hidden="true"></i>Filled by rules</span></td><td>Required in every row</td></tr>
+<tr data-who="rule" data-code="B_02.02.0030"><td><code>B_02.02.0030</code></td><td>Identification code of the ICT third-party service provider</td><td><span class="who"><i class="sw sw--rule" aria-hidden="true"></i>Filled by rules</span></td><td>Required in every row</td></tr>
+<tr data-who="rule" data-code="B_02.02.0040"><td><code>B_02.02.0040</code></td><td>Type of code to identify the ICT third-party service provider</td><td><span class="who"><i class="sw sw--rule" aria-hidden="true"></i>Filled by rules</span></td><td>Required in every row</td></tr>
+<tr data-who="person" data-code="B_02.02.0050"><td><code>B_02.02.0050</code></td><td>Function identifier<small>You set it on the service. A cloud tag links resources to it but does not set it.</small></td><td><span class="who"><i class="sw sw--person" aria-hidden="true"></i>Entered by you</span></td><td>Required in every row</td></tr>
+<tr data-who="person" data-code="B_02.02.0060"><td><code>B_02.02.0060</code></td><td>Type of ICT services<small>You set it on the service. The built-in type table classifies resources, not register services.</small></td><td><span class="who"><i class="sw sw--person" aria-hidden="true"></i>Entered by you</span></td><td>Required in every row</td></tr>
+<tr data-who="person" data-code="B_02.02.0070"><td><code>B_02.02.0070</code></td><td>Start date of the contractual arrangement</td><td><span class="who"><i class="sw sw--person" aria-hidden="true"></i>Entered by you</span></td><td>Required in every row</td></tr>
+<tr data-who="rule" data-code="B_02.02.0080"><td><code>B_02.02.0080</code></td><td>End date of the contractual arrangement<small>9999-12-31 when no end date is set. Wrong if the date was forgotten.</small></td><td><span class="who"><i class="sw sw--rule" aria-hidden="true"></i>Filled by rules</span></td><td>Required in every row</td></tr>
+<tr data-who="person" data-code="B_02.02.0090"><td><code>B_02.02.0090</code></td><td>Reason of the termination or ending of the contractual arrangement</td><td><span class="who"><i class="sw sw--person" aria-hidden="true"></i>Entered by you</span></td><td>If terminated</td></tr>
+<tr data-who="person" data-code="B_02.02.0100"><td><code>B_02.02.0100</code></td><td>Notice period for the entity making use of the ICT service(s)</td><td><span class="who"><i class="sw sw--person" aria-hidden="true"></i>Entered by you</span></td><td>If it supports a critical function</td></tr>
+<tr data-who="person" data-code="B_02.02.0110"><td><code>B_02.02.0110</code></td><td>Notice period for the ICT third-party service provider</td><td><span class="who"><i class="sw sw--person" aria-hidden="true"></i>Entered by you</span></td><td>If it supports a critical function</td></tr>
+<tr data-who="person" data-code="B_02.02.0120"><td><code>B_02.02.0120</code></td><td>Country of the governing law of the contractual arrangement</td><td><span class="who"><i class="sw sw--person" aria-hidden="true"></i>Entered by you</span></td><td>If it supports a critical function</td></tr>
+<tr data-who="scan" data-code="B_02.02.0130"><td><code>B_02.02.0130</code></td><td>Country of provision of the ICT services<small>Most common country among linked resources. The contract may say otherwise.</small></td><td><span class="who"><i class="sw sw--scan" aria-hidden="true"></i>From the cloud scan</span></td><td>If it supports a critical function</td></tr>
+<tr data-who="scan" data-code="B_02.02.0140"><td><code>B_02.02.0140</code></td><td>Storage of data<small>Yes if a linked resource type is on the data-store list.</small></td><td><span class="who"><i class="sw sw--scan" aria-hidden="true"></i>From the cloud scan</span></td><td>If it supports a critical function</td></tr>
+<tr data-who="scan" data-code="B_02.02.0150"><td><code>B_02.02.0150</code></td><td>Location of the data at rest (storage)<small>A location typed on the service takes priority over the scanned countries.</small></td><td><span class="who"><i class="sw sw--scan" aria-hidden="true"></i>From the cloud scan</span></td><td>If it stores data</td></tr>
+<tr data-who="scan" data-code="B_02.02.0160"><td><code>B_02.02.0160</code></td><td>Location of management of the data (processing)<small>Where linked resources run, not where support staff work.</small></td><td><span class="who"><i class="sw sw--scan" aria-hidden="true"></i>From the cloud scan</span></td><td>If it processes data</td></tr>
+<tr data-who="ai" data-code="B_02.02.0170"><td><code>B_02.02.0170</code></td><td>Sensitiveness of the data stored by the ICT third-party service provider</td><td><span class="who"><i class="sw sw--ai" aria-hidden="true"></i>Drafted by AI</span></td><td>If it stores data for a critical function</td></tr>
+<tr data-who="ai" data-code="B_02.02.0180"><td><code>B_02.02.0180</code></td><td>Level of reliance on the ICT service supporting the critical or important function</td><td><span class="who"><i class="sw sw--ai" aria-hidden="true"></i>Drafted by AI</span></td><td>If it supports a critical function</td></tr>
+          </tbody></table>
+      </details>
+      <details class="tpl">
+        <summary><code>B_02.03</code><span>List of intra-group contractual arrangements</span><em aria-hidden="true"><i class="sw sw--person" aria-hidden="true"></i><i class="sw sw--person" aria-hidden="true"></i><i class="sw sw--rule" aria-hidden="true"></i></em></summary>
+        <table class="ctable"><thead><tr><th>Column</th><th>What it holds</th><th>Who fills it</th><th>When it is needed</th></tr></thead>
+          <tbody>
+            <tr data-who="person" data-code="B_02.03.0010"><td><code>B_02.03.0010</code></td><td>Contractual arrangement reference number</td><td><span class="who"><i class="sw sw--person" aria-hidden="true"></i>Entered by you</span></td><td>Required in every row</td></tr>
+<tr data-who="person" data-code="B_02.03.0020"><td><code>B_02.03.0020</code></td><td>Contractual arrangement reference number linked to B_02.03.0010</td><td><span class="who"><i class="sw sw--person" aria-hidden="true"></i>Entered by you</span></td><td>Required in every row</td></tr>
+<tr data-who="rule" data-code="B_02.03.0030"><td><code>B_02.03.0030</code></td><td>Link</td><td><span class="who"><i class="sw sw--rule" aria-hidden="true"></i>Filled by rules</span></td><td>Required in every row</td></tr>
+          </tbody></table>
+      </details>
+      <details class="tpl">
+        <summary><code>B_03.01</code><span>Entities signing the contractual arrangements for receiving ICT service(s)</span><em aria-hidden="true"><i class="sw sw--rule" aria-hidden="true"></i><i class="sw sw--rule" aria-hidden="true"></i><i class="sw sw--rule" aria-hidden="true"></i></em></summary>
+        <table class="ctable"><thead><tr><th>Column</th><th>What it holds</th><th>Who fills it</th><th>When it is needed</th></tr></thead>
+          <tbody>
+            <tr data-who="rule" data-code="B_03.01.0010"><td><code>B_03.01.0010</code></td><td>Contractual arrangement reference number</td><td><span class="who"><i class="sw sw--rule" aria-hidden="true"></i>Filled by rules</span></td><td>Required in every row</td></tr>
+<tr data-who="rule" data-code="B_03.01.0020"><td><code>B_03.01.0020</code></td><td>LEI of the entity signing the contractual arrangement</td><td><span class="who"><i class="sw sw--rule" aria-hidden="true"></i>Filled by rules</span></td><td>Required in every row</td></tr>
+<tr data-who="rule" data-code="B_03.01.0030"><td><code>B_03.01.0030</code></td><td>Link</td><td><span class="who"><i class="sw sw--rule" aria-hidden="true"></i>Filled by rules</span></td><td>Required in every row</td></tr>
+          </tbody></table>
+      </details>
+      <details class="tpl">
+        <summary><code>B_03.02</code><span>ICT third-party service providers signing the contractual arrangements</span><em aria-hidden="true"><i class="sw sw--rule" aria-hidden="true"></i><i class="sw sw--rule" aria-hidden="true"></i><i class="sw sw--rule" aria-hidden="true"></i></em></summary>
+        <table class="ctable"><thead><tr><th>Column</th><th>What it holds</th><th>Who fills it</th><th>When it is needed</th></tr></thead>
+          <tbody>
+            <tr data-who="rule" data-code="B_03.02.0010"><td><code>B_03.02.0010</code></td><td>Contractual arrangement reference number</td><td><span class="who"><i class="sw sw--rule" aria-hidden="true"></i>Filled by rules</span></td><td>Required in every row</td></tr>
+<tr data-who="rule" data-code="B_03.02.0020"><td><code>B_03.02.0020</code></td><td>Identification code of the ICT third-party service provider</td><td><span class="who"><i class="sw sw--rule" aria-hidden="true"></i>Filled by rules</span></td><td>Required in every row</td></tr>
+<tr data-who="rule" data-code="B_03.02.0030"><td><code>B_03.02.0030</code></td><td>Type of code to identify the ICT third-party service provider</td><td><span class="who"><i class="sw sw--rule" aria-hidden="true"></i>Filled by rules</span></td><td>Required in every row</td></tr>
+          </tbody></table>
+      </details>
+      <details class="tpl">
+        <summary><code>B_03.03</code><span>Entities signing the contractual arrangements for providing ICT service(s)</span><em aria-hidden="true"><i class="sw sw--person" aria-hidden="true"></i><i class="sw sw--person" aria-hidden="true"></i><i class="sw sw--rule" aria-hidden="true"></i></em></summary>
+        <table class="ctable"><thead><tr><th>Column</th><th>What it holds</th><th>Who fills it</th><th>When it is needed</th></tr></thead>
+          <tbody>
+            <tr data-who="person" data-code="B_03.03.0010"><td><code>B_03.03.0010</code></td><td>Contractual arrangement reference number</td><td><span class="who"><i class="sw sw--person" aria-hidden="true"></i>Entered by you</span></td><td>Required in every row</td></tr>
+<tr data-who="person" data-code="B_03.03.0020"><td><code>B_03.03.0020</code></td><td>LEI of the entity providing ICT services</td><td><span class="who"><i class="sw sw--person" aria-hidden="true"></i>Entered by you</span></td><td>Required in every row</td></tr>
+<tr data-who="rule" data-code="B_03.03.0031"><td><code>B_03.03.0031</code></td><td>Link</td><td><span class="who"><i class="sw sw--rule" aria-hidden="true"></i>Filled by rules</span></td><td>Required in every row</td></tr>
+          </tbody></table>
+      </details>
+      <details class="tpl">
+        <summary><code>B_04.01</code><span>Entities making use of the ICT services</span><em aria-hidden="true"><i class="sw sw--rule" aria-hidden="true"></i><i class="sw sw--rule" aria-hidden="true"></i><i class="sw sw--rule" aria-hidden="true"></i><i class="sw sw--person" aria-hidden="true"></i></em></summary>
+        <table class="ctable"><thead><tr><th>Column</th><th>What it holds</th><th>Who fills it</th><th>When it is needed</th></tr></thead>
+          <tbody>
+            <tr data-who="rule" data-code="B_04.01.0010"><td><code>B_04.01.0010</code></td><td>Contractual arrangement reference number</td><td><span class="who"><i class="sw sw--rule" aria-hidden="true"></i>Filled by rules</span></td><td>Required in every row</td></tr>
+<tr data-who="rule" data-code="B_04.01.0020"><td><code>B_04.01.0020</code></td><td>LEI of the entity making use of the ICT service(s)</td><td><span class="who"><i class="sw sw--rule" aria-hidden="true"></i>Filled by rules</span></td><td>Required in every row</td></tr>
+<tr data-who="rule" data-code="B_04.01.0030"><td><code>B_04.01.0030</code></td><td>Nature of the entity making use of the ICT service(s)<small>“Not a branch” unless a branch code is set.</small></td><td><span class="who"><i class="sw sw--rule" aria-hidden="true"></i>Filled by rules</span></td><td>Required in every row</td></tr>
+<tr data-who="person" data-code="B_04.01.0040"><td><code>B_04.01.0040</code></td><td>Identification code of the branch</td><td><span class="who"><i class="sw sw--person" aria-hidden="true"></i>Entered by you</span></td><td>If the user is a branch</td></tr>
+          </tbody></table>
+      </details>
+      <details class="tpl">
+        <summary><code>B_05.01</code><span>ICT third-party service providers</span><em aria-hidden="true"><i class="sw sw--lookup" aria-hidden="true"></i><i class="sw sw--rule" aria-hidden="true"></i><i class="sw sw--person" aria-hidden="true"></i><i class="sw sw--person" aria-hidden="true"></i><i class="sw sw--person" aria-hidden="true"></i><i class="sw sw--rule" aria-hidden="true"></i><i class="sw sw--person" aria-hidden="true"></i><i class="sw sw--lookup" aria-hidden="true"></i><i class="sw sw--rule" aria-hidden="true"></i><i class="sw sw--rule" aria-hidden="true"></i><i class="sw sw--lookup" aria-hidden="true"></i><i class="sw sw--lookup" aria-hidden="true"></i></em></summary>
+        <table class="ctable"><thead><tr><th>Column</th><th>What it holds</th><th>Who fills it</th><th>When it is needed</th></tr></thead>
+          <tbody>
+            <tr data-who="lookup" data-code="B_05.01.0010"><td><code>B_05.01.0010</code></td><td>Identification code of the ICT third-party service provider</td><td><span class="who"><i class="sw sw--lookup" aria-hidden="true"></i>Looked up in GLEIF</span></td><td>Required in every row</td></tr>
+<tr data-who="rule" data-code="B_05.01.0020"><td><code>B_05.01.0020</code></td><td>Type of code to identify the ICT third-party service provider</td><td><span class="who"><i class="sw sw--rule" aria-hidden="true"></i>Filled by rules</span></td><td>Required in every row</td></tr>
+<tr data-who="person" data-code="B_05.01.0030"><td><code>B_05.01.0030</code></td><td>Additional identification code of the ICT third-party service provider</td><td><span class="who"><i class="sw sw--person" aria-hidden="true"></i>Entered by you</span></td><td>Optional</td></tr>
+<tr data-who="person" data-code="B_05.01.0040"><td><code>B_05.01.0040</code></td><td>Type of the additional identification code</td><td><span class="who"><i class="sw sw--person" aria-hidden="true"></i>Entered by you</span></td><td>If a second code is given</td></tr>
+<tr data-who="person" data-code="B_05.01.0050"><td><code>B_05.01.0050</code></td><td>Legal name of the ICT third-party service provider</td><td><span class="who"><i class="sw sw--person" aria-hidden="true"></i>Entered by you</span></td><td>Required in every row</td></tr>
+<tr data-who="rule" data-code="B_05.01.0060"><td><code>B_05.01.0060</code></td><td>Name of the ICT third-party service provider in Latin alphabet<small>Copied only when the legal name is already in Latin script.</small></td><td><span class="who"><i class="sw sw--rule" aria-hidden="true"></i>Filled by rules</span></td><td>Required in every row</td></tr>
+<tr data-who="person" data-code="B_05.01.0070"><td><code>B_05.01.0070</code></td><td>Type of person of the ICT third-party service provider</td><td><span class="who"><i class="sw sw--person" aria-hidden="true"></i>Entered by you</span></td><td>Required in every row</td></tr>
+<tr data-who="lookup" data-code="B_05.01.0080"><td><code>B_05.01.0080</code></td><td>Country of the ICT third-party service provider&#x27;s headquarters</td><td><span class="who"><i class="sw sw--lookup" aria-hidden="true"></i>Looked up in GLEIF</span></td><td>Required in every row</td></tr>
+<tr data-who="rule" data-code="B_05.01.0090"><td><code>B_05.01.0090</code></td><td>Currency of the amount reported in B_05.01.0100</td><td><span class="who"><i class="sw sw--rule" aria-hidden="true"></i>Filled by rules</span></td><td>If an amount is reported</td></tr>
+<tr data-who="rule" data-code="B_05.01.0100"><td><code>B_05.01.0100</code></td><td>Total annual expense or estimated cost of the ICT third-party service provider<small>Sum of contract costs, when every contract has one. Currencies are not converted.</small></td><td><span class="who"><i class="sw sw--rule" aria-hidden="true"></i>Filled by rules</span></td><td>If a direct provider</td></tr>
+<tr data-who="lookup" data-code="B_05.01.0110"><td><code>B_05.01.0110</code></td><td>Identification code of the provider&#x27;s ultimate parent undertaking<small>If blank, the export reports the provider as its own ultimate parent.</small></td><td><span class="who"><i class="sw sw--lookup" aria-hidden="true"></i>Looked up in GLEIF</span></td><td>If it has a parent (not checked)</td></tr>
+<tr data-who="lookup" data-code="B_05.01.0120"><td><code>B_05.01.0120</code></td><td>Type of code to identify the provider&#x27;s ultimate parent undertaking</td><td><span class="who"><i class="sw sw--lookup" aria-hidden="true"></i>Looked up in GLEIF</span></td><td>If it has a parent (not checked)</td></tr>
+          </tbody></table>
+      </details>
+      <details class="tpl">
+        <summary><code>B_05.02</code><span>ICT service supply chains</span><em aria-hidden="true"><i class="sw sw--rule" aria-hidden="true"></i><i class="sw sw--rule" aria-hidden="true"></i><i class="sw sw--rule" aria-hidden="true"></i><i class="sw sw--rule" aria-hidden="true"></i><i class="sw sw--rule" aria-hidden="true"></i><i class="sw sw--person" aria-hidden="true"></i><i class="sw sw--rule" aria-hidden="true"></i></em></summary>
+        <table class="ctable"><thead><tr><th>Column</th><th>What it holds</th><th>Who fills it</th><th>When it is needed</th></tr></thead>
+          <tbody>
+            <tr data-who="rule" data-code="B_05.02.0010"><td><code>B_05.02.0010</code></td><td>Contractual arrangement reference number</td><td><span class="who"><i class="sw sw--rule" aria-hidden="true"></i>Filled by rules</span></td><td>Required in every row</td></tr>
+<tr data-who="rule" data-code="B_05.02.0020"><td><code>B_05.02.0020</code></td><td>Type of ICT services</td><td><span class="who"><i class="sw sw--rule" aria-hidden="true"></i>Filled by rules</span></td><td>Required in every row</td></tr>
+<tr data-who="rule" data-code="B_05.02.0030"><td><code>B_05.02.0030</code></td><td>Identification code of the ICT third-party service provider</td><td><span class="who"><i class="sw sw--rule" aria-hidden="true"></i>Filled by rules</span></td><td>Required in every row</td></tr>
+<tr data-who="rule" data-code="B_05.02.0040"><td><code>B_05.02.0040</code></td><td>Type of code to identify the ICT third-party service provider</td><td><span class="who"><i class="sw sw--rule" aria-hidden="true"></i>Filled by rules</span></td><td>Required in every row</td></tr>
+<tr data-who="rule" data-code="B_05.02.0050"><td><code>B_05.02.0050</code></td><td>Rank<small>Rank 1 is automatic. Subcontractor rows are entered by a person.</small></td><td><span class="who"><i class="sw sw--rule" aria-hidden="true"></i>Filled by rules</span></td><td>Required in every row</td></tr>
+<tr data-who="person" data-code="B_05.02.0060"><td><code>B_05.02.0060</code></td><td>Identification code of the recipient of sub-contracted ICT services</td><td><span class="who"><i class="sw sw--person" aria-hidden="true"></i>Entered by you</span></td><td>For rank 2 and below in the chain</td></tr>
+<tr data-who="rule" data-code="B_05.02.0070"><td><code>B_05.02.0070</code></td><td>Type of code to identify the recipient of sub-contracted ICT services</td><td><span class="who"><i class="sw sw--rule" aria-hidden="true"></i>Filled by rules</span></td><td>For rank 2 and below in the chain</td></tr>
+          </tbody></table>
+      </details>
+      <details class="tpl">
+        <summary><code>B_06.01</code><span>Functions identification</span><em aria-hidden="true"><i class="sw sw--person" aria-hidden="true"></i><i class="sw sw--ai" aria-hidden="true"></i><i class="sw sw--person" aria-hidden="true"></i><i class="sw sw--rule" aria-hidden="true"></i><i class="sw sw--person" aria-hidden="true"></i><i class="sw sw--person" aria-hidden="true"></i><i class="sw sw--person" aria-hidden="true"></i><i class="sw sw--person" aria-hidden="true"></i><i class="sw sw--person" aria-hidden="true"></i><i class="sw sw--person" aria-hidden="true"></i></em></summary>
+        <table class="ctable"><thead><tr><th>Column</th><th>What it holds</th><th>Who fills it</th><th>When it is needed</th></tr></thead>
+          <tbody>
+            <tr data-who="person" data-code="B_06.01.0010"><td><code>B_06.01.0010</code></td><td>Function identifier</td><td><span class="who"><i class="sw sw--person" aria-hidden="true"></i>Entered by you</span></td><td>Required in every row</td></tr>
+<tr data-who="ai" data-code="B_06.01.0020"><td><code>B_06.01.0020</code></td><td>Licensed activity</td><td><span class="who"><i class="sw sw--ai" aria-hidden="true"></i>Drafted by AI</span></td><td>Required in every row</td></tr>
+<tr data-who="person" data-code="B_06.01.0030"><td><code>B_06.01.0030</code></td><td>Function name</td><td><span class="who"><i class="sw sw--person" aria-hidden="true"></i>Entered by you</span></td><td>Required in every row</td></tr>
+<tr data-who="rule" data-code="B_06.01.0040"><td><code>B_06.01.0040</code></td><td>LEI of the entity</td><td><span class="who"><i class="sw sw--rule" aria-hidden="true"></i>Filled by rules</span></td><td>Required in every row</td></tr>
+<tr data-who="person" data-code="B_06.01.0050"><td><code>B_06.01.0050</code></td><td>Criticality or importance assessment<small>From the critical flag you set on the function.</small></td><td><span class="who"><i class="sw sw--person" aria-hidden="true"></i>Entered by you</span></td><td>Required in every row</td></tr>
+<tr data-who="person" data-code="B_06.01.0060"><td><code>B_06.01.0060</code></td><td>Reasons for criticality or importance</td><td><span class="who"><i class="sw sw--person" aria-hidden="true"></i>Entered by you</span></td><td>Optional</td></tr>
+<tr data-who="person" data-code="B_06.01.0070"><td><code>B_06.01.0070</code></td><td>Date of the last assessment of criticality or importance</td><td><span class="who"><i class="sw sw--person" aria-hidden="true"></i>Entered by you</span></td><td>Required in every row</td></tr>
+<tr data-who="person" data-code="B_06.01.0080"><td><code>B_06.01.0080</code></td><td>Recovery time objective of the function (hours)</td><td><span class="who"><i class="sw sw--person" aria-hidden="true"></i>Entered by you</span></td><td>Required in every row</td></tr>
+<tr data-who="person" data-code="B_06.01.0090"><td><code>B_06.01.0090</code></td><td>Recovery point objective of the function (hours)</td><td><span class="who"><i class="sw sw--person" aria-hidden="true"></i>Entered by you</span></td><td>Required in every row</td></tr>
+<tr data-who="person" data-code="B_06.01.0100"><td><code>B_06.01.0100</code></td><td>Impact of discontinuing the function</td><td><span class="who"><i class="sw sw--person" aria-hidden="true"></i>Entered by you</span></td><td>Required in every row</td></tr>
+          </tbody></table>
+      </details>
+      <details class="tpl">
+        <summary><code>B_07.01</code><span>Assessment of the ICT services</span><em aria-hidden="true"><i class="sw sw--rule" aria-hidden="true"></i><i class="sw sw--rule" aria-hidden="true"></i><i class="sw sw--rule" aria-hidden="true"></i><i class="sw sw--rule" aria-hidden="true"></i><i class="sw sw--ai" aria-hidden="true"></i><i class="sw sw--person" aria-hidden="true"></i><i class="sw sw--person" aria-hidden="true"></i><i class="sw sw--person" aria-hidden="true"></i><i class="sw sw--person" aria-hidden="true"></i><i class="sw sw--person" aria-hidden="true"></i><i class="sw sw--person" aria-hidden="true"></i><i class="sw sw--person" aria-hidden="true"></i></em></summary>
+        <table class="ctable"><thead><tr><th>Column</th><th>What it holds</th><th>Who fills it</th><th>When it is needed</th></tr></thead>
+          <tbody>
+            <tr data-who="rule" data-code="B_07.01.0010"><td><code>B_07.01.0010</code></td><td>Contractual arrangement reference number</td><td><span class="who"><i class="sw sw--rule" aria-hidden="true"></i>Filled by rules</span></td><td>Required in every row</td></tr>
+<tr data-who="rule" data-code="B_07.01.0020"><td><code>B_07.01.0020</code></td><td>Identification code of the ICT third-party service provider</td><td><span class="who"><i class="sw sw--rule" aria-hidden="true"></i>Filled by rules</span></td><td>Required in every row</td></tr>
+<tr data-who="rule" data-code="B_07.01.0030"><td><code>B_07.01.0030</code></td><td>Type of code to identify the ICT third-party service provider</td><td><span class="who"><i class="sw sw--rule" aria-hidden="true"></i>Filled by rules</span></td><td>Required in every row</td></tr>
+<tr data-who="rule" data-code="B_07.01.0040"><td><code>B_07.01.0040</code></td><td>Type of ICT services</td><td><span class="who"><i class="sw sw--rule" aria-hidden="true"></i>Filled by rules</span></td><td>Required in every row</td></tr>
+<tr data-who="ai" data-code="B_07.01.0050"><td><code>B_07.01.0050</code></td><td>Substitutability of the ICT third-party service provider</td><td><span class="who"><i class="sw sw--ai" aria-hidden="true"></i>Drafted by AI</span></td><td>Required in every row</td></tr>
+<tr data-who="person" data-code="B_07.01.0060"><td><code>B_07.01.0060</code></td><td>Reason where the provider is not or hardly substitutable</td><td><span class="who"><i class="sw sw--person" aria-hidden="true"></i>Entered by you</span></td><td>If hard to substitute</td></tr>
+<tr data-who="person" data-code="B_07.01.0070"><td><code>B_07.01.0070</code></td><td>Date of the last audit on the ICT third-party service provider</td><td><span class="who"><i class="sw sw--person" aria-hidden="true"></i>Entered by you</span></td><td>Required in every row</td></tr>
+<tr data-who="person" data-code="B_07.01.0080"><td><code>B_07.01.0080</code></td><td>Existence of an exit plan</td><td><span class="who"><i class="sw sw--person" aria-hidden="true"></i>Entered by you</span></td><td>Required in every row</td></tr>
+<tr data-who="person" data-code="B_07.01.0090"><td><code>B_07.01.0090</code></td><td>Possibility of reintegration of the contracted ICT service</td><td><span class="who"><i class="sw sw--person" aria-hidden="true"></i>Entered by you</span></td><td>Required in every row</td></tr>
+<tr data-who="person" data-code="B_07.01.0100"><td><code>B_07.01.0100</code></td><td>Impact of discontinuing the ICT services</td><td><span class="who"><i class="sw sw--person" aria-hidden="true"></i>Entered by you</span></td><td>Required in every row</td></tr>
+<tr data-who="person" data-code="B_07.01.0110"><td><code>B_07.01.0110</code></td><td>Are there alternative ICT third-party service providers identified?</td><td><span class="who"><i class="sw sw--person" aria-hidden="true"></i>Entered by you</span></td><td>Required in every row</td></tr>
+<tr data-who="person" data-code="B_07.01.0120"><td><code>B_07.01.0120</code></td><td>Identification of alternative ICT third-party service providers</td><td><span class="who"><i class="sw sw--person" aria-hidden="true"></i>Entered by you</span></td><td>Optional</td></tr>
+          </tbody></table>
+      </details>
+      <details class="tpl">
+        <summary><code>B_99.01</code><span>Definitions from entities making use of the ICT services</span><em aria-hidden="true"><i class="sw sw--rule" aria-hidden="true"></i><i class="sw sw--rule" aria-hidden="true"></i><i class="sw sw--rule" aria-hidden="true"></i><i class="sw sw--person" aria-hidden="true"></i></em></summary>
+        <table class="ctable"><thead><tr><th>Column</th><th>What it holds</th><th>Who fills it</th><th>When it is needed</th></tr></thead>
+          <tbody>
+            <tr data-who="rule" data-code="B_99.01.C0010"><td><code>B_99.01.C0010</code></td><td>Column code</td><td><span class="who"><i class="sw sw--rule" aria-hidden="true"></i>Filled by rules</span></td><td>Required in every row</td></tr>
+<tr data-who="rule" data-code="B_99.01.C0020"><td><code>B_99.01.C0020</code></td><td>Column name</td><td><span class="who"><i class="sw sw--rule" aria-hidden="true"></i>Filled by rules</span></td><td>Required in every row</td></tr>
+<tr data-who="rule" data-code="B_99.01.C0030"><td><code>B_99.01.C0030</code></td><td>Option</td><td><span class="who"><i class="sw sw--rule" aria-hidden="true"></i>Filled by rules</span></td><td>Required in every row</td></tr>
+<tr data-who="person" data-code="B_99.01.C0040"><td><code>B_99.01.C0040</code></td><td>Description or internal definition of the option<small>Prefilled with the regulation’s labels until you write your own.</small></td><td><span class="who"><i class="sw sw--person" aria-hidden="true"></i>Entered by you</span></td><td>Required in every row</td></tr>
+          </tbody></table>
+      </details>
+      <div class="end">
+        <a class="btn btn--primary" href="index.html#download">Download DORAi</a>
+        <a class="btn btn--ghost" href="index.html#faq">Read the FAQ</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__in">
+    <a class="brand" href="index.html">DORA<span class="i">i</span></a>
+    <p>Based on DORAi 1.1.1. Not legal advice.</p>
+    <p class="sp">© 2026 DORAi</p>
+  </div>
+</footer>
+<div class="tip" id="tip" role="status" hidden><strong></strong><span></span><span></span></div>
+
+<script>
+(() => {
+'use strict';
+const $ = s => document.querySelector(s);
+const $$ = s => Array.from(document.querySelectorAll(s));
+const root = document.documentElement;
+const reduce = matchMedia('(prefers-reduced-motion: reduce)');
+const NAMES = {"scan": "From the cloud scan", "rule": "Filled by rules", "ai": "Drafted by AI", "lookup": "Looked up in GLEIF", "person": "Entered by you"};
+
+/* theme: same saved choice as the landing page */
+const themeBtn = $('#theme'), meta = $('meta[name="theme-color"]');
+function applyTheme(t, save) {
+  root.setAttribute('data-theme', t);
+  themeBtn.setAttribute('aria-label', t === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+  meta.setAttribute('content', t === 'dark' ? '#000000' : '#ffffff');
+  if (save) { try { localStorage.setItem('dorai-theme', t); } catch (e) {} }
+}
+applyTheme(root.getAttribute('data-theme') || 'dark', false);
+themeBtn.addEventListener('click', () => applyTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark', true));
+
+/* chart: the same 105 squares glide between the two groupings */
+const chart = $('#chart'), groups = {};
+$$('.grp').forEach(g => { groups[g.dataset.group] = g.querySelector('.grp__s'); });
+const sqs = $$('.sq').sort((a, b) => a.style.getPropertyValue('--i') - b.style.getPropertyValue('--i'));
+let current = null;
+
+function order() { return $$('.sq'); }
+function setRoving(el) {
+  if (current) current.tabIndex = -1;
+  current = el; el.tabIndex = 0;
+}
+sqs.forEach(s => {
+  s.tabIndex = -1;
+  s.setAttribute('role', 'button');
+  s.setAttribute('aria-label', `${s.dataset.code}, ${s.dataset.name}: ${NAMES[s.dataset.who]}`);
+});
+setRoving(order()[0]);
+
+function setView(view) {
+  if (chart.dataset.view === view) return;
+  const from = sqs.map(s => s.getBoundingClientRect());
+  chart.classList.add('has-moved'); // moving a node would replay its entrance
+  chart.dataset.view = view;
+  sqs.forEach(s => { groups[view === 'who' ? s.dataset.who : s.dataset.t].appendChild(s); });
+  if (!reduce.matches) sqs.forEach((s, i) => {
+    const to = s.getBoundingClientRect();
+    if (s.animate) s.animate([{ transform: `translate(${from[i].left - to.left}px, ${from[i].top - to.top}px)` }, { transform: 'none' }],
+      { duration: 750, delay: i * 2, easing: 'cubic-bezier(.2,.7,.2,1)', fill: 'backwards' });
+  });
+  setRoving(order()[0]);
+  $$('.seg button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.view === view)));
+}
+$$('.seg button').forEach(b => b.addEventListener('click', () => setView(b.dataset.view)));
+
+const tip = $('#tip'), [tipCode, tipName, tipWho] = tip.children;
+function showTip(s) {
+  tipCode.textContent = s.dataset.code;
+  tipName.textContent = s.dataset.name;
+  tipWho.textContent = NAMES[s.dataset.who];
+  tip.hidden = false;
+  const r = s.getBoundingClientRect(), w = tip.offsetWidth, h = tip.offsetHeight;
+  const x = Math.max(12, Math.min(innerWidth - w - 12, r.left + r.width / 2 - w / 2));
+  const y = r.top - h - 8 > 64 ? r.top - h - 8 : r.bottom + 8;
+  tip.style.transform = `translate(${x}px, ${y}px)`;
+}
+const hideTip = () => { tip.hidden = true; };
+function openColumn(code) {
+  setFilter('all');
+  const row = $(`.ctable tr[data-code="${code}"]`);
+  row.closest('details').open = true;
+  $$('.ctable tr.is-lit').forEach(r => r.classList.remove('is-lit'));
+  row.classList.add('is-lit');
+  row.scrollIntoView({ block: 'center', behavior: reduce.matches ? 'auto' : 'smooth' });
+  hideTip();
+}
+sqs.forEach(s => {
+  s.addEventListener('pointerenter', () => showTip(s));
+  s.addEventListener('pointerleave', hideTip);
+  s.addEventListener('focus', () => { setRoving(s); showTip(s); });
+  s.addEventListener('blur', hideTip);
+  s.addEventListener('click', () => openColumn(s.dataset.code));
+  s.addEventListener('keydown', e => {
+    const step = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[e.key];
+    if (step) {
+      e.preventDefault();
+      const all = order();
+      all[(all.indexOf(s) + step + all.length) % all.length].focus();
+    } else if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault(); openColumn(s.dataset.code);
+    } else if (e.key === 'Escape') hideTip();
+  });
+});
+
+/* every column: filter */
+function setFilter(f) {
+  $$('.filters button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.f === f)));
+  $$('.tpl').forEach(d => {
+    let any = false;
+    d.querySelectorAll('tbody tr').forEach(r => { r.hidden = f !== 'all' && r.dataset.who !== f; any = any || !r.hidden; });
+    d.hidden = !any;
+    d.open = f !== 'all' && any;
+  });
+}
+$$('.filters button').forEach(b => b.addEventListener('click', () => setFilter(b.dataset.f)));
+
+/* reveal, nav border and the line that draws down the steps */
+const rv = $$('.rv');
+if ('IntersectionObserver' in window) {
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } }));
+  rv.forEach(x => io.observe(x));
+} else rv.forEach(x => x.classList.add('is-in'));
+
+const steps = $('#steps'), nav = $('#nav');
+let raf = 0;
+function frame() {
+  raf = 0;
+  nav.classList.toggle('is-scrolled', scrollY > 8);
+  const r = steps.getBoundingClientRect();
+  const p = reduce.matches ? 1 : Math.max(0, Math.min(1, (innerHeight * .65 - r.top) / r.height));
+  steps.style.setProperty('--p', p.toFixed(3));
+}
+addEventListener('scroll', () => { const a = document.activeElement; if (a && a.classList.contains('sq')) showTip(a); else hideTip(); if (!raf) raf = requestAnimationFrame(frame); }, { passive: true });
+frame();
+})();
+</script>
+</body>
+</html>
